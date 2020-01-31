@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>final</title>
+<title>station_quiz_week_2_manukov2</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13180,7 +13180,7 @@ Now, show the first 10 rows of "props". (SAS, Data Wrangling)</li>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-sas"><pre><span></span>filename loan1 url  &quot;https://uofi.box.com/shared/static/vi37omgitiaa2yyplrom779qvwk1g14x.csv&quot;;
@@ -13249,1968 +13249,6 @@ run;
 </div>
 </div>
 
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[1]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<!DOCTYPE html>
-<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta charset="utf-8"/>
-<meta content="SAS 9.4" name="generator"/>
-<title>SAS Output</title>
-<style>
-/*<![CDATA[*/
-.body.c > table, .body.c > pre, .body.c div > table,
-.body.c div > pre, .body.c > table, .body.c > pre,
-.body.j > table, .body.j > pre, .body.j div > table,
-.body.j div > pre, .body.j > table, .body.j > pre,
-.body.c p.note, .body.c p.warning, .body.c p.error, .body.c p.fatal,
-.body.j p.note, .body.j p.warning, .body.j p.error, .body.j p.fatal,
-.body.c > table.layoutcontainer, .body.j > table.layoutcontainer { margin-left: auto; margin-right: auto }
-.layoutregion.l table, .layoutregion.l pre, .layoutregion.l p.note,
-.layoutregion.l p.warning, .layoutregion.l p.error, .layoutregion.l p.fatal { margin-left: 0 }
-.layoutregion.c table, .layoutregion.c pre, .layoutregion.c p.note,
-.layoutregion.c p.warning, .layoutregion.c p.error, .layoutregion.c p.fatal { margin-left: auto; margin-right: auto }
-.layoutregion.r table, .layoutregion.r pre, .layoutregion.r p.note,
-.layoutregion.r table, .layoutregion.r pre, .layoutregion.r p.note,
-.layoutregion.r p.warning, .layoutregion.r p.error, .layoutregion.r p.fatal { margin-right: 0 }
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block }
-html{ font-size: 100% }
-.body { margin: 1em; font-size: 13px; line-height: 1.231 }
-sup { position: relative; vertical-align: baseline; bottom: 0.25em; font-size: 0.8em }
-sub { position: relative; vertical-align: baseline; top: 0.25em; font-size: 0.8em }
-ul, ol { margin: 1em 0; padding: 0 0 0 40px }
-dd { margin: 0 0 0 40px }
-nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0 }
-img { border: 0; vertical-align: middle }
-svg:not(:root) { overflow: hidden }
-figure { margin: 0 }
-table { border-collapse: collapse; border-spacing: 0 }
-.layoutcontainer { border-collapse: separate; border-spacing: 0 }
-p { margin-top: 0; text-align: left }
-h1.heading1 { text-align: left }
-h2.heading2 { text-align: left }
-h3.heading3 { text-align: left }
-h4.heading4 { text-align: left }
-h5.heading5 { text-align: left }
-h6.heading6 { text-align: left }
-span { text-align: left }
-table { margin-bottom: 1em }
-td, th { text-align: left; padding: 3px 6px; vertical-align: top }
-td[class$="fixed"], th[class$="fixed"] { white-space: pre }
-section, article { padding-top: 1px; padding-bottom: 8px }
-hr.pagebreak { height: 0px; border: 0; border-bottom: 1px solid #c0c0c0; margin: 1em 0 }
-.stacked-value { text-align: left; display: block }
-.stacked-cell > .stacked-value, td.data > td.data, th.data > td.data, th.data > th.data, td.data > th.data, th.header > th.header { border: 0 }
-.stacked-cell > div.data { border-width: 0 }
-.systitleandfootercontainer { white-space: nowrap; margin-bottom: 1em }
-.systitleandfootercontainer > p { margin: 0 }
-.systitleandfootercontainer > p > span { display: inline-block; width: 100%; white-space: normal }
-.batch { display: table }
-.toc { display: none }
-.proc_note_group, .proc_title_group { margin-bottom: 1em }
-p.proctitle { margin: 0 }
-p.note, p.warning, p.error, p.fatal { display: table }
-.notebanner, .warnbanner, .errorbanner, .fatalbanner,
-.notecontent, .warncontent, .errorcontent, .fatalcontent { display: table-cell; padding: 0.5em }
-.notebanner, .warnbanner, .errorbanner, .fatalbanner { padding-right: 0 }
-.body > div > ol li { text-align: left }
-.beforecaption > h4 { margin-top: 0; margin-bottom: 0 }
-.c { text-align: center }
-.r { text-align: right }
-.l { text-align: left }
-.j { text-align: justify }
-.d { text-align: right }
-.b { vertical-align: bottom }
-.m { vertical-align: middle }
-.t { vertical-align: top }
-.accessiblecaption {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-a:active { color: #800080 }
-.aftercaption {
-    background-color: #fafbfe;
-    border-spacing: 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-    padding-top: 4pt;
-}
-.batch > colgroup {
-    border-left: 1px solid #c1c1c1;
-    border-right: 1px solid #c1c1c1;
-}
-.batch > tbody, .batch > thead, .batch > tfoot {
-    border-top: 1px solid #c1c1c1;
-    border-bottom: 1px solid #c1c1c1;
-}
-.batch { border: hidden; }
-.batch {
-    background-color: #fafbfe;
-    border: 1px solid #c1c1c1;
-    border-collapse: separate;
-    border-spacing: 1px;
-    color: #000000;
-    font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    padding: 7px;
-    }
-.beforecaption {
-    background-color: #fafbfe;
-    border-spacing: 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.body {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    margin-left: 8px;
-    margin-right: 8px;
-}
-.bodydate {
-    background-color: #fafbfe;
-    border-spacing: 0;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    text-align: right;
-    vertical-align: top;
-    width: 100%;
-}
-.bycontentfolder {
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: none;
-    margin-left: 6pt;
-}
-.byline {
-    background-color: #fafbfe;
-    border-spacing: 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.bylinecontainer > col, .bylinecontainer > colgroup > col, .bylinecontainer > colgroup, .bylinecontainer > tr, .bylinecontainer > * > tr, .bylinecontainer > thead, .bylinecontainer > tbody, .bylinecontainer > tfoot { border: none; }
-.bylinecontainer {
-    background-color: #fafbfe;
-    border: none;
-    border-spacing: 1px;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    width: 100%;
-}
-.caption {
-    background-color: #fafbfe;
-    border-spacing: 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.cell, .container {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.contentfolder, .contentitem {
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: none;
-    margin-left: 6pt;
-}
-.contentproclabel, .contentprocname {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.contents {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: decimal;
-    margin-left: 8px;
-    margin-right: 8px;
-}
-.contentsdate {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    width: 100%;
-}
-.contenttitle {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: bold;
-}
-.continued {
-    background-color: #fafbfe;
-    border-spacing: 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-    width: 100%;
-}
-.data, .dataemphasis {
-    background-color: #ffffff;
-    border-color: #c1c1c1;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.dataemphasisfixed {
-    background-color: #ffffff;
-    border-color: #c1c1c1;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    font-family: 'Courier New', Courier, monospace;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: normal;
-}
-.dataempty {
-    background-color: #ffffff;
-    border-color: #c1c1c1;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.datafixed {
-    background-color: #ffffff;
-    border-color: #c1c1c1;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    font-family: 'Courier New', Courier;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.datastrong {
-    background-color: #ffffff;
-    border-color: #c1c1c1;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.datastrongfixed {
-    background-color: #ffffff;
-    border-color: #c1c1c1;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #000000;
-    font-family: 'Courier New', Courier, monospace;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.date {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    width: 100%;
-}
-.document {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.errorbanner {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.errorcontent {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.errorcontentfixed {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: 'Courier New', Courier;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.extendedpage {
-    background-color: #fafbfe;
-    border-style: solid;
-    border-width: 1pt;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: normal;
-    text-align: center;
-}
-.fatalbanner {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.fatalcontent {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.fatalcontentfixed {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: 'Courier New', Courier;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.folderaction {
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: none;
-    margin-left: 6pt;
-}
-.footer {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.footeremphasis {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: normal;
-}
-.footeremphasisfixed {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: 'Courier New', Courier, monospace;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: normal;
-}
-.footerempty {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.footerfixed {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: 'Courier New', Courier;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.footerstrong {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.footerstrongfixed {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: 'Courier New', Courier, monospace;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.frame {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.graph > colgroup {
-    border-left: 1px solid #c1c1c1;
-    border-right: 1px solid #c1c1c1;
-}
-.graph > tbody, .graph > thead, .graph > tfoot {
-    border-top: 1px solid #c1c1c1;
-    border-bottom: 1px solid #c1c1c1;
-}
-.graph { border: hidden; }
-.graph {
-    background-color: #fafbfe;
-    border: 1px solid #c1c1c1;
-    border-collapse: separate;
-    border-spacing: 1px;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    }
-.header {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.headeremphasis {
-    background-color: #d8dbd3;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: normal;
-}
-.headeremphasisfixed {
-    background-color: #d8dbd3;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #000000;
-    font-family: 'Courier New', Courier, monospace;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: normal;
-}
-.headerempty {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.headerfixed {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: 'Courier New', Courier;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.headersandfooters {
-    background-color: #edf2f9;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.headerstrong {
-    background-color: #d8dbd3;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.headerstrongfixed {
-    background-color: #d8dbd3;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #000000;
-    font-family: 'Courier New', Courier, monospace;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.heading1, .heading2, .heading3, .heading4, .heading5, .heading6 { font-family: Arial, Helvetica, sans-serif }
-.index {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.indexaction, .indexitem {
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: none;
-    margin-left: 6pt;
-}
-.indexprocname {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.indextitle {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: bold;
-}
-.layoutcontainer, .layoutregion {
-    border-width: 0;
-    border-spacing: 30px;
-}
-.linecontent {
-    background-color: #fafbfe;
-    border-color: #c1c1c1;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-a:link { color: #0000ff }
-.list {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: disc;
-}
-.list10 {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: square;
-}
-.list2 {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: circle;
-}
-.list3, .list4, .list5, .list6, .list7, .list8, .list9 {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: square;
-}
-.listitem {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: disc;
-}
-.listitem10 {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: square;
-}
-.listitem2 {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: circle;
-}
-.listitem3, .listitem4, .listitem5, .listitem6, .listitem7, .listitem8, .listitem9 {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: square;
-}
-.note {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.notebanner {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.notecontent {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.notecontentfixed {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: 'Courier New', Courier;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.output > colgroup {
-    border-left: 1px solid #c1c1c1;
-    border-right: 1px solid #c1c1c1;
-}
-.output > tbody, .output > thead, .output > tfoot {
-    border-top: 1px solid #c1c1c1;
-    border-bottom: 1px solid #c1c1c1;
-}
-.output { border: hidden; }
-.output {
-    background-color: #fafbfe;
-    border: 1px solid #c1c1c1;
-    border-collapse: separate;
-    border-spacing: 1px;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    }
-.pageno {
-    background-color: #fafbfe;
-    border-spacing: 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-    text-align: right;
-    vertical-align: top;
-}
-.pages {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: decimal;
-    margin-left: 8px;
-    margin-right: 8px;
-}
-.pagesdate {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    width: 100%;
-}
-.pagesitem {
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: none;
-    margin-left: 6pt;
-}
-.pagesproclabel, .pagesprocname {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.pagestitle {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: bold;
-}
-.paragraph {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.parskip > col, .parskip > colgroup > col, .parskip > colgroup, .parskip > tr, .parskip > * > tr, .parskip > thead, .parskip > tbody, .parskip > tfoot { border: none; }
-.parskip {
-    border: none;
-    border-spacing: 0;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-    }
-.prepage {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    text-align: left;
-}
-.proctitle {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.proctitlefixed {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: 'Courier New', Courier, monospace;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.rowfooter {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.rowfooteremphasis {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: normal;
-}
-.rowfooteremphasisfixed {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: 'Courier New', Courier, monospace;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: normal;
-}
-.rowfooterempty {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.rowfooterfixed {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: 'Courier New', Courier;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.rowfooterstrong {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.rowfooterstrongfixed {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: 'Courier New', Courier, monospace;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.rowheader {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.rowheaderemphasis {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: normal;
-}
-.rowheaderemphasisfixed {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: 'Courier New', Courier, monospace;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: normal;
-}
-.rowheaderempty {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.rowheaderfixed {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: 'Courier New', Courier;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.rowheaderstrong {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.rowheaderstrongfixed {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: 'Courier New', Courier, monospace;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.systemfooter, .systemfooter10, .systemfooter2, .systemfooter3, .systemfooter4, .systemfooter5, .systemfooter6, .systemfooter7, .systemfooter8, .systemfooter9 {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.systemtitle, .systemtitle10, .systemtitle2, .systemtitle3, .systemtitle4, .systemtitle5, .systemtitle6, .systemtitle7, .systemtitle8, .systemtitle9 {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size: small;
-    font-style: normal;
-    font-weight: bold;
-}
-.systitleandfootercontainer > col, .systitleandfootercontainer > colgroup > col, .systitleandfootercontainer > colgroup, .systitleandfootercontainer > tr, .systitleandfootercontainer > * > tr, .systitleandfootercontainer > thead, .systitleandfootercontainer > tbody, .systitleandfootercontainer > tfoot { border: none; }
-.systitleandfootercontainer {
-    background-color: #fafbfe;
-    border: none;
-    border-spacing: 1px;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    width: 100%;
-}
-.table > col, .table > colgroup > col {
-    border-left: 1px solid #c1c1c1;
-    border-right: 0 solid #c1c1c1;
-}
-.table > tr, .table > * > tr {
-    border-top: 1px solid #c1c1c1;
-    border-bottom: 0 solid #c1c1c1;
-}
-.table { border: hidden; }
-.table {
-    border-color: #c1c1c1;
-    border-style: solid;
-    border-width: 1px 0 0 1px;
-    border-collapse: collapse;
-    border-spacing: 0;
-    }
-.titleandnotecontainer > col, .titleandnotecontainer > colgroup > col, .titleandnotecontainer > colgroup, .titleandnotecontainer > tr, .titleandnotecontainer > * > tr, .titleandnotecontainer > thead, .titleandnotecontainer > tbody, .titleandnotecontainer > tfoot { border: none; }
-.titleandnotecontainer {
-    background-color: #fafbfe;
-    border: none;
-    border-spacing: 1px;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    width: 100%;
-}
-.titlesandfooters {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.usertext {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-a:visited { color: #800080 }
-.warnbanner {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.warncontent {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.warncontentfixed {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: 'Courier New', Courier;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-/*]]>*/
-</style>
-</head>
-<body class="l body">
-<div style="padding-bottom: 8px; padding-top: 1px">
-<div id="IDX" class="systitleandfootercontainer" style="border-spacing: 1px">
-<p><span class="c systemtitle">The SAS System</span> </p>
-</div>
-<div class="proc_title_group">
-<p class="c proctitle">The CONTENTS Procedure</p>
-</div>
-<div style="padding-bottom: 8px; padding-top: 1px">
-<div style="padding-bottom: 8px; padding-top: 1px">
-<table class="table" style="border-spacing: 0" aria-label="Attributes">
-<caption aria-label="Attributes"></caption>
-<colgroup><col/><col/><col/><col/></colgroup>
-<tbody>
-<tr>
-<th class="rowheader" scope="row">Data Set Name</th>
-<td class="data">WORK.SBA</td>
-<th class="rowheader" scope="row">Observations</th>
-<td class="data">899164</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Member Type</th>
-<td class="data">DATA</td>
-<th class="rowheader" scope="row">Variables</th>
-<td class="data">27</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Engine</th>
-<td class="data">V9</td>
-<th class="rowheader" scope="row">Indexes</th>
-<td class="data">0</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Created</th>
-<td class="data">01/31/2020 16:13:45</td>
-<th class="rowheader" scope="row">Observation Length</th>
-<td class="data">216</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Last Modified</th>
-<td class="data">01/31/2020 16:13:45</td>
-<th class="rowheader" scope="row">Deleted Observations</th>
-<td class="data">0</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Protection</th>
-<td class="data">&#160;</td>
-<th class="rowheader" scope="row">Compressed</th>
-<td class="data">NO</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Data Set Type</th>
-<td class="data">&#160;</td>
-<th class="rowheader" scope="row">Sorted</th>
-<td class="data">NO</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Label</th>
-<td class="data">&#160;</td>
-<th class="rowheader" scope="row">&#160;</th>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Data Representation</th>
-<td class="data">SOLARIS_X86_64, LINUX_X86_64, ALPHA_TRU64, LINUX_IA64</td>
-<th class="rowheader" scope="row">&#160;</th>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Encoding</th>
-<td class="data">utf-8  Unicode (UTF-8)</td>
-<th class="rowheader" scope="row">&#160;</th>
-<td class="data">&#160;</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="IDX1" style="padding-bottom: 8px; padding-top: 1px">
-<table class="table" style="border-spacing: 0" aria-label="Engine/Host Information">
-<caption aria-label="Engine/Host Information"></caption>
-<colgroup><col/><col/></colgroup>
-<thead>
-<tr>
-<th class="c b header" colspan="2" scope="colgroup">Engine/Host Dependent Information</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th class="rowheader" scope="row">Data Set Page Size</th>
-<td class="data">65536</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Number of Data Set Pages</th>
-<td class="data">2968</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">First Data Page</th>
-<td class="data">1</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Max Obs per Page</th>
-<td class="data">303</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Obs in First Data Page</th>
-<td class="data">278</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Number of Data Set Repairs</th>
-<td class="data">0</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Filename</th>
-<td class="data">/tmp/SAS_workA4AB00004A88_localhost.localdomain/sba.sas7bdat</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Release Created</th>
-<td class="data">9.0401M6</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Host Created</th>
-<td class="data">Linux</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Inode Number</th>
-<td class="data">671536</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Access Permission</th>
-<td class="data">rw-r--r--</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Owner Name</th>
-<td class="data">sasdemo</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">File Size</th>
-<td class="data">186MB</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">File Size (bytes)</th>
-<td class="data">194576384</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="IDX2" style="padding-bottom: 8px; padding-top: 1px">
-<table class="table" style="border-spacing: 0" aria-label="Variables">
-<caption aria-label="Variables"></caption>
-<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/></colgroup>
-<thead>
-<tr>
-<th class="c b header" colspan="5" scope="colgroup">Alphabetic List of Variables and Attributes</th>
-</tr>
-<tr>
-<th class="r b header" scope="col">#</th>
-<th class="b header" scope="col">Variable</th>
-<th class="b header" scope="col">Type</th>
-<th class="r b header" scope="col">Len</th>
-<th class="b header" scope="col">Format</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th class="r rowheader" scope="row">9</th>
-<td class="data">ApprovalDate</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">MMDDYY10.</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">10</th>
-<td class="data">ApprovalFY</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">23</th>
-<td class="data">BalanceGross</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">DOLLAR15.2</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">6</th>
-<td class="data">Bank</td>
-<td class="data">Char</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">7</th>
-<td class="data">BankState</td>
-<td class="data">Char</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">20</th>
-<td class="data">ChgOffDate</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">MMDDYY10.</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">25</th>
-<td class="data">ChgOffPrinGr</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">DOLLAR15.2</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">3</th>
-<td class="data">City</td>
-<td class="data">Char</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">14</th>
-<td class="data">CreateJob</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">21</th>
-<td class="data">DisbursementDate</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">MMDDYY10.</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">22</th>
-<td class="data">DisbursementGross</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">DOLLAR15.2</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">16</th>
-<td class="data">FranchiseCode</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">26</th>
-<td class="data">GrAppv</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">DOLLAR15.2</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">1</th>
-<td class="data">LoanNr_ChkDgt</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">19</th>
-<td class="data">LowDoc</td>
-<td class="data">Char</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">24</th>
-<td class="data">MIS_Status</td>
-<td class="data">Char</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">8</th>
-<td class="data">NAICS</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">2</th>
-<td class="data">Name</td>
-<td class="data">Char</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">13</th>
-<td class="data">NewExist</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">12</th>
-<td class="data">NoEmp</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">15</th>
-<td class="data">RetainedJob</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">18</th>
-<td class="data">RevLineCr</td>
-<td class="data">Char</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">27</th>
-<td class="data">SBA_Appv</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">DOLLAR15.2</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">4</th>
-<td class="data">State</td>
-<td class="data">Char</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">11</th>
-<td class="data">Term</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">17</th>
-<td class="data">Urban_Rural</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">5</th>
-<td class="data">Zip</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div style="padding-bottom: 8px; padding-top: 1px">
-<hr class="pagebreak"/>
-<div id="IDX3" class="systitleandfootercontainer" style="border-spacing: 1px">
-<p><span class="c systemtitle">The SAS System</span> </p>
-</div>
-<div style="padding-bottom: 8px; padding-top: 1px">
-<table class="table" style="border-spacing: 0" aria-label="Data Set WORK.SBA">
-<caption aria-label="Data Set WORK.SBA"></caption>
-<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/><col/></colgroup>
-<thead>
-<tr>
-<th class="r header" scope="col">Obs</th>
-<th class="r header" scope="col">LoanNr_ChkDgt</th>
-<th class="header" scope="col">Name</th>
-<th class="header" scope="col">City</th>
-<th class="header" scope="col">State</th>
-<th class="r header" scope="col">Zip</th>
-<th class="header" scope="col">Bank</th>
-<th class="header" scope="col">BankState</th>
-<th class="r header" scope="col">NAICS</th>
-<th class="r header" scope="col">ApprovalDate</th>
-<th class="r header" scope="col">ApprovalFY</th>
-<th class="r header" scope="col">Term</th>
-<th class="r header" scope="col">NoEmp</th>
-<th class="r header" scope="col">NewExist</th>
-<th class="r header" scope="col">CreateJob</th>
-<th class="r header" scope="col">RetainedJob</th>
-<th class="r header" scope="col">FranchiseCode</th>
-<th class="r header" scope="col">Urban_Rural</th>
-<th class="header" scope="col">RevLineCr</th>
-<th class="header" scope="col">LowDoc</th>
-<th class="r header" scope="col">ChgOffDate</th>
-<th class="r header" scope="col">DisbursementDate</th>
-<th class="r header" scope="col">DisbursementGross</th>
-<th class="r header" scope="col">BalanceGross</th>
-<th class="header" scope="col">MIS_Status</th>
-<th class="r header" scope="col">ChgOffPrinGr</th>
-<th class="r header" scope="col">GrAppv</th>
-<th class="r header" scope="col">SBA_Appv</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th class="r rowheader" scope="row">1</th>
-<td class="r data">1000014003</td>
-<td class="data">ABC HOBB</td>
-<td class="data">EVANSVIL</td>
-<td class="data">IN</td>
-<td class="r data">47711</td>
-<td class="data">FIFTH TH</td>
-<td class="data">OH</td>
-<td class="r data">451120</td>
-<td class="r data">02/28/1997</td>
-<td class="r data">1997</td>
-<td class="r data">84</td>
-<td class="r data">4</td>
-<td class="r data">2</td>
-<td class="r data">0</td>
-<td class="r data">0</td>
-<td class="r data">1</td>
-<td class="r data">0</td>
-<td class="data">N</td>
-<td class="data">Y</td>
-<td class="r data">.</td>
-<td class="r data">02/28/1999</td>
-<td class="r data">$60,000.00</td>
-<td class="r data">$0.00</td>
-<td class="data">P I F</td>
-<td class="r data">$0.00</td>
-<td class="r data">$60,000.00</td>
-<td class="r data">$48,000.00</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">2</th>
-<td class="r data">1000024006</td>
-<td class="data">LANDMARK</td>
-<td class="data">NEW PARI</td>
-<td class="data">IN</td>
-<td class="r data">46526</td>
-<td class="data">1ST SOUR</td>
-<td class="data">IN</td>
-<td class="r data">722410</td>
-<td class="r data">02/28/1997</td>
-<td class="r data">1997</td>
-<td class="r data">60</td>
-<td class="r data">2</td>
-<td class="r data">2</td>
-<td class="r data">0</td>
-<td class="r data">0</td>
-<td class="r data">1</td>
-<td class="r data">0</td>
-<td class="data">N</td>
-<td class="data">Y</td>
-<td class="r data">.</td>
-<td class="r data">05/31/1997</td>
-<td class="r data">$40,000.00</td>
-<td class="r data">$0.00</td>
-<td class="data">P I F</td>
-<td class="r data">$0.00</td>
-<td class="r data">$40,000.00</td>
-<td class="r data">$32,000.00</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">3</th>
-<td class="r data">1000034009</td>
-<td class="data">WHITLOCK</td>
-<td class="data">BLOOMING</td>
-<td class="data">IN</td>
-<td class="r data">47401</td>
-<td class="data">GRANT CO</td>
-<td class="data">IN</td>
-<td class="r data">621210</td>
-<td class="r data">02/28/1997</td>
-<td class="r data">1997</td>
-<td class="r data">180</td>
-<td class="r data">7</td>
-<td class="r data">1</td>
-<td class="r data">0</td>
-<td class="r data">0</td>
-<td class="r data">1</td>
-<td class="r data">0</td>
-<td class="data">N</td>
-<td class="data">N</td>
-<td class="r data">.</td>
-<td class="r data">12/31/1997</td>
-<td class="r data">$287,000.00</td>
-<td class="r data">$0.00</td>
-<td class="data">P I F</td>
-<td class="r data">$0.00</td>
-<td class="r data">$287,000.00</td>
-<td class="r data">$215,250.00</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">4</th>
-<td class="r data">1000044001</td>
-<td class="data">BIG BUCK</td>
-<td class="data">BROKEN A</td>
-<td class="data">OK</td>
-<td class="r data">74012</td>
-<td class="data">1ST NATL</td>
-<td class="data">OK</td>
-<td class="r data">0</td>
-<td class="r data">02/28/1997</td>
-<td class="r data">1997</td>
-<td class="r data">60</td>
-<td class="r data">2</td>
-<td class="r data">1</td>
-<td class="r data">0</td>
-<td class="r data">0</td>
-<td class="r data">1</td>
-<td class="r data">0</td>
-<td class="data">N</td>
-<td class="data">Y</td>
-<td class="r data">.</td>
-<td class="r data">06/30/1997</td>
-<td class="r data">$35,000.00</td>
-<td class="r data">$0.00</td>
-<td class="data">P I F</td>
-<td class="r data">$0.00</td>
-<td class="r data">$35,000.00</td>
-<td class="r data">$28,000.00</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">5</th>
-<td class="r data">1000054004</td>
-<td class="data">ANASTASI</td>
-<td class="data">ORLANDO</td>
-<td class="data">FL</td>
-<td class="r data">32801</td>
-<td class="data">FLORIDA</td>
-<td class="data">FL</td>
-<td class="r data">0</td>
-<td class="r data">02/28/1997</td>
-<td class="r data">1997</td>
-<td class="r data">240</td>
-<td class="r data">14</td>
-<td class="r data">1</td>
-<td class="r data">7</td>
-<td class="r data">7</td>
-<td class="r data">1</td>
-<td class="r data">0</td>
-<td class="data">N</td>
-<td class="data">N</td>
-<td class="r data">.</td>
-<td class="r data">05/14/1997</td>
-<td class="r data">$229,000.00</td>
-<td class="r data">$0.00</td>
-<td class="data">P I F</td>
-<td class="r data">$0.00</td>
-<td class="r data">$229,000.00</td>
-<td class="r data">$229,000.00</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">6</th>
-<td class="r data">1000084002</td>
-<td class="data">B&amp;T SCRE</td>
-<td class="data">PLAINVIL</td>
-<td class="data">CT</td>
-<td class="r data">6062</td>
-<td class="data">TD BANK,</td>
-<td class="data">DE</td>
-<td class="r data">332721</td>
-<td class="r data">02/28/1997</td>
-<td class="r data">1997</td>
-<td class="r data">120</td>
-<td class="r data">19</td>
-<td class="r data">1</td>
-<td class="r data">0</td>
-<td class="r data">0</td>
-<td class="r data">1</td>
-<td class="r data">0</td>
-<td class="data">N</td>
-<td class="data">N</td>
-<td class="r data">.</td>
-<td class="r data">06/30/1997</td>
-<td class="r data">$517,000.00</td>
-<td class="r data">$0.00</td>
-<td class="data">P I F</td>
-<td class="r data">$0.00</td>
-<td class="r data">$517,000.00</td>
-<td class="r data">$387,750.00</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">7</th>
-<td class="r data">1000093009</td>
-<td class="data">MIDDLE A</td>
-<td class="data">UNION</td>
-<td class="data">NJ</td>
-<td class="r data">7083</td>
-<td class="data">WELLS FA</td>
-<td class="data">SD</td>
-<td class="r data">0</td>
-<td class="r data">06/02/1980</td>
-<td class="r data">1980</td>
-<td class="r data">45</td>
-<td class="r data">45</td>
-<td class="r data">2</td>
-<td class="r data">0</td>
-<td class="r data">0</td>
-<td class="r data">0</td>
-<td class="r data">0</td>
-<td class="data">N</td>
-<td class="data">N</td>
-<td class="r data">06/24/1991</td>
-<td class="r data">07/22/1980</td>
-<td class="r data">$600,000.00</td>
-<td class="r data">$0.00</td>
-<td class="data">CHGOFF</td>
-<td class="r data">$208,959.00</td>
-<td class="r data">$600,000.00</td>
-<td class="r data">$499,998.00</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">8</th>
-<td class="r data">1000094005</td>
-<td class="data">WEAVER P</td>
-<td class="data">SUMMERFI</td>
-<td class="data">FL</td>
-<td class="r data">34491</td>
-<td class="data">REGIONS</td>
-<td class="data">AL</td>
-<td class="r data">811118</td>
-<td class="r data">02/28/1997</td>
-<td class="r data">1997</td>
-<td class="r data">84</td>
-<td class="r data">1</td>
-<td class="r data">2</td>
-<td class="r data">0</td>
-<td class="r data">0</td>
-<td class="r data">1</td>
-<td class="r data">0</td>
-<td class="data">N</td>
-<td class="data">Y</td>
-<td class="r data">.</td>
-<td class="r data">06/30/1998</td>
-<td class="r data">$45,000.00</td>
-<td class="r data">$0.00</td>
-<td class="data">P I F</td>
-<td class="r data">$0.00</td>
-<td class="r data">$45,000.00</td>
-<td class="r data">$36,000.00</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">9</th>
-<td class="r data">1000104006</td>
-<td class="data">TURTLE B</td>
-<td class="data">PORT SAI</td>
-<td class="data">FL</td>
-<td class="r data">32456</td>
-<td class="data">CENTENNI</td>
-<td class="data">FL</td>
-<td class="r data">721310</td>
-<td class="r data">02/28/1997</td>
-<td class="r data">1997</td>
-<td class="r data">297</td>
-<td class="r data">2</td>
-<td class="r data">2</td>
-<td class="r data">0</td>
-<td class="r data">0</td>
-<td class="r data">1</td>
-<td class="r data">0</td>
-<td class="data">N</td>
-<td class="data">N</td>
-<td class="r data">.</td>
-<td class="r data">07/31/1997</td>
-<td class="r data">$305,000.00</td>
-<td class="r data">$0.00</td>
-<td class="data">P I F</td>
-<td class="r data">$0.00</td>
-<td class="r data">$305,000.00</td>
-<td class="r data">$228,750.00</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">10</th>
-<td class="r data">1000124001</td>
-<td class="data">INTEXT B</td>
-<td class="data">GLASTONB</td>
-<td class="data">CT</td>
-<td class="r data">6073</td>
-<td class="data">WEBSTER</td>
-<td class="data">CT</td>
-<td class="r data">0</td>
-<td class="r data">02/28/1997</td>
-<td class="r data">1997</td>
-<td class="r data">84</td>
-<td class="r data">3</td>
-<td class="r data">2</td>
-<td class="r data">0</td>
-<td class="r data">0</td>
-<td class="r data">1</td>
-<td class="r data">0</td>
-<td class="data">N</td>
-<td class="data">Y</td>
-<td class="r data">.</td>
-<td class="r data">04/30/1997</td>
-<td class="r data">$70,000.00</td>
-<td class="r data">$0.00</td>
-<td class="data">P I F</td>
-<td class="r data">$0.00</td>
-<td class="r data">$70,000.00</td>
-<td class="r data">$56,000.00</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div style="padding-bottom: 8px; padding-top: 1px">
-<hr class="pagebreak"/>
-<div id="IDX4" class="systitleandfootercontainer" style="border-spacing: 1px">
-<p><span class="c systemtitle">The SAS System</span> </p>
-</div>
-<div style="padding-bottom: 8px; padding-top: 1px">
-<table class="table" style="border-spacing: 0" aria-label="Data Set WORK.SBA_SUB">
-<caption aria-label="Data Set WORK.SBA_SUB"></caption>
-<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/><col/><col/><col/><col/></colgroup>
-<thead>
-<tr>
-<th class="r header" scope="col">Obs</th>
-<th class="header" scope="col">Name</th>
-<th class="header" scope="col">City</th>
-<th class="header" scope="col">State</th>
-<th class="r header" scope="col">ApprovalFY</th>
-<th class="r header" scope="col">NoEmp</th>
-<th class="header" scope="col">MIS_Status</th>
-<th class="r header" scope="col">GrAppv</th>
-<th class="r header" scope="col">SBA_Appv</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th class="r rowheader" scope="row">1</th>
-<td class="data">Charles</td>
-<td class="data">KANSAS C</td>
-<td class="data">KS</td>
-<td class="r data">2014</td>
-<td class="r data">3</td>
-<td class="data">P I F</td>
-<td class="r data">$100,000.00</td>
-<td class="r data">$85,000.00</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">2</th>
-<td class="data">Charles</td>
-<td class="data">KANSAS C</td>
-<td class="data">KS</td>
-<td class="r data">2014</td>
-<td class="r data">3</td>
-<td class="data">P I F</td>
-<td class="r data">$50,000.00</td>
-<td class="r data">$42,500.00</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">3</th>
-<td class="data">Joyce In</td>
-<td class="data">WHITE PL</td>
-<td class="data">NY</td>
-<td class="r data">2014</td>
-<td class="r data">2</td>
-<td class="data">P I F</td>
-<td class="r data">$25,000.00</td>
-<td class="r data">$12,500.00</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">4</th>
-<td class="data">SHR Reso</td>
-<td class="data">CENTEREA</td>
-<td class="data">NY</td>
-<td class="r data">2014</td>
-<td class="r data">1</td>
-<td class="data">P I F</td>
-<td class="r data">$10,000.00</td>
-<td class="r data">$5,000.00</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">5</th>
-<td class="data">ANGEL PL</td>
-<td class="data">CAMARILL</td>
-<td class="data">CA</td>
-<td class="r data">2014</td>
-<td class="r data">5</td>
-<td class="data">P I F</td>
-<td class="r data">$24,100.00</td>
-<td class="r data">$12,050.00</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">6</th>
-<td class="data">AKJ Indu</td>
-<td class="data">Fort Mye</td>
-<td class="data">FL</td>
-<td class="r data">2014</td>
-<td class="r data">85</td>
-<td class="data">P I F</td>
-<td class="r data">$600,000.00</td>
-<td class="r data">$450,000.00</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">7</th>
-<td class="data">KAKAO CA</td>
-<td class="data">TYRONE</td>
-<td class="data">GA</td>
-<td class="r data">2014</td>
-<td class="r data">3</td>
-<td class="data">P I F</td>
-<td class="r data">$25,000.00</td>
-<td class="r data">$12,500.00</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">8</th>
-<td class="data">Pish Pos</td>
-<td class="data">LAKEWOOD</td>
-<td class="data">NJ</td>
-<td class="r data">2014</td>
-<td class="r data">12</td>
-<td class="data">P I F</td>
-<td class="r data">$350,000.00</td>
-<td class="r data">$175,000.00</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">9</th>
-<td class="data">CR 334 R</td>
-<td class="data">BEEVILLE</td>
-<td class="data">TX</td>
-<td class="r data">2014</td>
-<td class="r data">1</td>
-<td class="data">P I F</td>
-<td class="r data">$15,300.00</td>
-<td class="r data">$7,650.00</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">10</th>
-<td class="data">PANDA CH</td>
-<td class="data">MINNEAPO</td>
-<td class="data">MN</td>
-<td class="r data">2014</td>
-<td class="r data">3</td>
-<td class="data">P I F</td>
-<td class="r data">$25,000.00</td>
-<td class="r data">$12,500.00</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</body>
-</html>
-
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -15235,7 +13273,7 @@ a:visited { color: #800080 }
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-sas"><pre><span></span>filename loan1 url  &quot;https://uofi.box.com/shared/static/vi37omgitiaa2yyplrom779qvwk1g14x.csv&quot;;
@@ -15255,1520 +13293,6 @@ format ApprovalDate mmddyy10. ChgOffDate mmddyy10. DisbursementDate mmddyy10.
        GrAppv dollar15.2 SBA_Appv dollar15.2;
 run;
 proc contents data=sba;
-run;
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>SAS Connection established. Subprocess id is 3804
-
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[1]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<!DOCTYPE html>
-<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta charset="utf-8"/>
-<meta content="SAS 9.4" name="generator"/>
-<title>SAS Output</title>
-<style>
-/*<![CDATA[*/
-.body.c > table, .body.c > pre, .body.c div > table,
-.body.c div > pre, .body.c > table, .body.c > pre,
-.body.j > table, .body.j > pre, .body.j div > table,
-.body.j div > pre, .body.j > table, .body.j > pre,
-.body.c p.note, .body.c p.warning, .body.c p.error, .body.c p.fatal,
-.body.j p.note, .body.j p.warning, .body.j p.error, .body.j p.fatal,
-.body.c > table.layoutcontainer, .body.j > table.layoutcontainer { margin-left: auto; margin-right: auto }
-.layoutregion.l table, .layoutregion.l pre, .layoutregion.l p.note,
-.layoutregion.l p.warning, .layoutregion.l p.error, .layoutregion.l p.fatal { margin-left: 0 }
-.layoutregion.c table, .layoutregion.c pre, .layoutregion.c p.note,
-.layoutregion.c p.warning, .layoutregion.c p.error, .layoutregion.c p.fatal { margin-left: auto; margin-right: auto }
-.layoutregion.r table, .layoutregion.r pre, .layoutregion.r p.note,
-.layoutregion.r table, .layoutregion.r pre, .layoutregion.r p.note,
-.layoutregion.r p.warning, .layoutregion.r p.error, .layoutregion.r p.fatal { margin-right: 0 }
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block }
-html{ font-size: 100% }
-.body { margin: 1em; font-size: 13px; line-height: 1.231 }
-sup { position: relative; vertical-align: baseline; bottom: 0.25em; font-size: 0.8em }
-sub { position: relative; vertical-align: baseline; top: 0.25em; font-size: 0.8em }
-ul, ol { margin: 1em 0; padding: 0 0 0 40px }
-dd { margin: 0 0 0 40px }
-nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0 }
-img { border: 0; vertical-align: middle }
-svg:not(:root) { overflow: hidden }
-figure { margin: 0 }
-table { border-collapse: collapse; border-spacing: 0 }
-.layoutcontainer { border-collapse: separate; border-spacing: 0 }
-p { margin-top: 0; text-align: left }
-h1.heading1 { text-align: left }
-h2.heading2 { text-align: left }
-h3.heading3 { text-align: left }
-h4.heading4 { text-align: left }
-h5.heading5 { text-align: left }
-h6.heading6 { text-align: left }
-span { text-align: left }
-table { margin-bottom: 1em }
-td, th { text-align: left; padding: 3px 6px; vertical-align: top }
-td[class$="fixed"], th[class$="fixed"] { white-space: pre }
-section, article { padding-top: 1px; padding-bottom: 8px }
-hr.pagebreak { height: 0px; border: 0; border-bottom: 1px solid #c0c0c0; margin: 1em 0 }
-.stacked-value { text-align: left; display: block }
-.stacked-cell > .stacked-value, td.data > td.data, th.data > td.data, th.data > th.data, td.data > th.data, th.header > th.header { border: 0 }
-.stacked-cell > div.data { border-width: 0 }
-.systitleandfootercontainer { white-space: nowrap; margin-bottom: 1em }
-.systitleandfootercontainer > p { margin: 0 }
-.systitleandfootercontainer > p > span { display: inline-block; width: 100%; white-space: normal }
-.batch { display: table }
-.toc { display: none }
-.proc_note_group, .proc_title_group { margin-bottom: 1em }
-p.proctitle { margin: 0 }
-p.note, p.warning, p.error, p.fatal { display: table }
-.notebanner, .warnbanner, .errorbanner, .fatalbanner,
-.notecontent, .warncontent, .errorcontent, .fatalcontent { display: table-cell; padding: 0.5em }
-.notebanner, .warnbanner, .errorbanner, .fatalbanner { padding-right: 0 }
-.body > div > ol li { text-align: left }
-.beforecaption > h4 { margin-top: 0; margin-bottom: 0 }
-.c { text-align: center }
-.r { text-align: right }
-.l { text-align: left }
-.j { text-align: justify }
-.d { text-align: right }
-.b { vertical-align: bottom }
-.m { vertical-align: middle }
-.t { vertical-align: top }
-.accessiblecaption {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-a:active { color: #800080 }
-.aftercaption {
-    background-color: #fafbfe;
-    border-spacing: 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-    padding-top: 4pt;
-}
-.batch > colgroup {
-    border-left: 1px solid #c1c1c1;
-    border-right: 1px solid #c1c1c1;
-}
-.batch > tbody, .batch > thead, .batch > tfoot {
-    border-top: 1px solid #c1c1c1;
-    border-bottom: 1px solid #c1c1c1;
-}
-.batch { border: hidden; }
-.batch {
-    background-color: #fafbfe;
-    border: 1px solid #c1c1c1;
-    border-collapse: separate;
-    border-spacing: 1px;
-    color: #000000;
-    font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    padding: 7px;
-    }
-.beforecaption {
-    background-color: #fafbfe;
-    border-spacing: 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.body {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    margin-left: 8px;
-    margin-right: 8px;
-}
-.bodydate {
-    background-color: #fafbfe;
-    border-spacing: 0;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    text-align: right;
-    vertical-align: top;
-    width: 100%;
-}
-.bycontentfolder {
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: none;
-    margin-left: 6pt;
-}
-.byline {
-    background-color: #fafbfe;
-    border-spacing: 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.bylinecontainer > col, .bylinecontainer > colgroup > col, .bylinecontainer > colgroup, .bylinecontainer > tr, .bylinecontainer > * > tr, .bylinecontainer > thead, .bylinecontainer > tbody, .bylinecontainer > tfoot { border: none; }
-.bylinecontainer {
-    background-color: #fafbfe;
-    border: none;
-    border-spacing: 1px;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    width: 100%;
-}
-.caption {
-    background-color: #fafbfe;
-    border-spacing: 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.cell, .container {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.contentfolder, .contentitem {
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: none;
-    margin-left: 6pt;
-}
-.contentproclabel, .contentprocname {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.contents {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: decimal;
-    margin-left: 8px;
-    margin-right: 8px;
-}
-.contentsdate {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    width: 100%;
-}
-.contenttitle {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: bold;
-}
-.continued {
-    background-color: #fafbfe;
-    border-spacing: 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-    width: 100%;
-}
-.data, .dataemphasis {
-    background-color: #ffffff;
-    border-color: #c1c1c1;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.dataemphasisfixed {
-    background-color: #ffffff;
-    border-color: #c1c1c1;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    font-family: 'Courier New', Courier, monospace;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: normal;
-}
-.dataempty {
-    background-color: #ffffff;
-    border-color: #c1c1c1;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.datafixed {
-    background-color: #ffffff;
-    border-color: #c1c1c1;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    font-family: 'Courier New', Courier;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.datastrong {
-    background-color: #ffffff;
-    border-color: #c1c1c1;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.datastrongfixed {
-    background-color: #ffffff;
-    border-color: #c1c1c1;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #000000;
-    font-family: 'Courier New', Courier, monospace;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.date {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    width: 100%;
-}
-.document {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.errorbanner {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.errorcontent {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.errorcontentfixed {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: 'Courier New', Courier;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.extendedpage {
-    background-color: #fafbfe;
-    border-style: solid;
-    border-width: 1pt;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: normal;
-    text-align: center;
-}
-.fatalbanner {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.fatalcontent {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.fatalcontentfixed {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: 'Courier New', Courier;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.folderaction {
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: none;
-    margin-left: 6pt;
-}
-.footer {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.footeremphasis {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: normal;
-}
-.footeremphasisfixed {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: 'Courier New', Courier, monospace;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: normal;
-}
-.footerempty {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.footerfixed {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: 'Courier New', Courier;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.footerstrong {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.footerstrongfixed {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: 'Courier New', Courier, monospace;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.frame {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.graph > colgroup {
-    border-left: 1px solid #c1c1c1;
-    border-right: 1px solid #c1c1c1;
-}
-.graph > tbody, .graph > thead, .graph > tfoot {
-    border-top: 1px solid #c1c1c1;
-    border-bottom: 1px solid #c1c1c1;
-}
-.graph { border: hidden; }
-.graph {
-    background-color: #fafbfe;
-    border: 1px solid #c1c1c1;
-    border-collapse: separate;
-    border-spacing: 1px;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    }
-.header {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.headeremphasis {
-    background-color: #d8dbd3;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: normal;
-}
-.headeremphasisfixed {
-    background-color: #d8dbd3;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #000000;
-    font-family: 'Courier New', Courier, monospace;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: normal;
-}
-.headerempty {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.headerfixed {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: 'Courier New', Courier;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.headersandfooters {
-    background-color: #edf2f9;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.headerstrong {
-    background-color: #d8dbd3;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.headerstrongfixed {
-    background-color: #d8dbd3;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #000000;
-    font-family: 'Courier New', Courier, monospace;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.heading1, .heading2, .heading3, .heading4, .heading5, .heading6 { font-family: Arial, Helvetica, sans-serif }
-.index {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.indexaction, .indexitem {
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: none;
-    margin-left: 6pt;
-}
-.indexprocname {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.indextitle {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: bold;
-}
-.layoutcontainer, .layoutregion {
-    border-width: 0;
-    border-spacing: 30px;
-}
-.linecontent {
-    background-color: #fafbfe;
-    border-color: #c1c1c1;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-a:link { color: #0000ff }
-.list {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: disc;
-}
-.list10 {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: square;
-}
-.list2 {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: circle;
-}
-.list3, .list4, .list5, .list6, .list7, .list8, .list9 {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: square;
-}
-.listitem {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: disc;
-}
-.listitem10 {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: square;
-}
-.listitem2 {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: circle;
-}
-.listitem3, .listitem4, .listitem5, .listitem6, .listitem7, .listitem8, .listitem9 {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: square;
-}
-.note {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.notebanner {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.notecontent {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.notecontentfixed {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: 'Courier New', Courier;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.output > colgroup {
-    border-left: 1px solid #c1c1c1;
-    border-right: 1px solid #c1c1c1;
-}
-.output > tbody, .output > thead, .output > tfoot {
-    border-top: 1px solid #c1c1c1;
-    border-bottom: 1px solid #c1c1c1;
-}
-.output { border: hidden; }
-.output {
-    background-color: #fafbfe;
-    border: 1px solid #c1c1c1;
-    border-collapse: separate;
-    border-spacing: 1px;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    }
-.pageno {
-    background-color: #fafbfe;
-    border-spacing: 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-    text-align: right;
-    vertical-align: top;
-}
-.pages {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: decimal;
-    margin-left: 8px;
-    margin-right: 8px;
-}
-.pagesdate {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    width: 100%;
-}
-.pagesitem {
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    list-style-type: none;
-    margin-left: 6pt;
-}
-.pagesproclabel, .pagesprocname {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.pagestitle {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: bold;
-}
-.paragraph {
-    background-color: #fafbfe;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.parskip > col, .parskip > colgroup > col, .parskip > colgroup, .parskip > tr, .parskip > * > tr, .parskip > thead, .parskip > tbody, .parskip > tfoot { border: none; }
-.parskip {
-    border: none;
-    border-spacing: 0;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-    }
-.prepage {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    text-align: left;
-}
-.proctitle {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.proctitlefixed {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: 'Courier New', Courier, monospace;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.rowfooter {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.rowfooteremphasis {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: normal;
-}
-.rowfooteremphasisfixed {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: 'Courier New', Courier, monospace;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: normal;
-}
-.rowfooterempty {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.rowfooterfixed {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: 'Courier New', Courier;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.rowfooterstrong {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.rowfooterstrongfixed {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: 'Courier New', Courier, monospace;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.rowheader {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.rowheaderemphasis {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: normal;
-}
-.rowheaderemphasisfixed {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: 'Courier New', Courier, monospace;
-    font-size:  normal;
-    font-style: italic;
-    font-weight: normal;
-}
-.rowheaderempty {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.rowheaderfixed {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: 'Courier New', Courier;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.rowheaderstrong {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.rowheaderstrongfixed {
-    background-color: #edf2f9;
-    border-color: #b0b7bb;
-    border-style: solid;
-    border-width: 0 1px 1px 0;
-    color: #112277;
-    font-family: 'Courier New', Courier, monospace;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.systemfooter, .systemfooter10, .systemfooter2, .systemfooter3, .systemfooter4, .systemfooter5, .systemfooter6, .systemfooter7, .systemfooter8, .systemfooter9 {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.systemtitle, .systemtitle10, .systemtitle2, .systemtitle3, .systemtitle4, .systemtitle5, .systemtitle6, .systemtitle7, .systemtitle8, .systemtitle9 {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size: small;
-    font-style: normal;
-    font-weight: bold;
-}
-.systitleandfootercontainer > col, .systitleandfootercontainer > colgroup > col, .systitleandfootercontainer > colgroup, .systitleandfootercontainer > tr, .systitleandfootercontainer > * > tr, .systitleandfootercontainer > thead, .systitleandfootercontainer > tbody, .systitleandfootercontainer > tfoot { border: none; }
-.systitleandfootercontainer {
-    background-color: #fafbfe;
-    border: none;
-    border-spacing: 1px;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    width: 100%;
-}
-.table > col, .table > colgroup > col {
-    border-left: 1px solid #c1c1c1;
-    border-right: 0 solid #c1c1c1;
-}
-.table > tr, .table > * > tr {
-    border-top: 1px solid #c1c1c1;
-    border-bottom: 0 solid #c1c1c1;
-}
-.table { border: hidden; }
-.table {
-    border-color: #c1c1c1;
-    border-style: solid;
-    border-width: 1px 0 0 1px;
-    border-collapse: collapse;
-    border-spacing: 0;
-    }
-.titleandnotecontainer > col, .titleandnotecontainer > colgroup > col, .titleandnotecontainer > colgroup, .titleandnotecontainer > tr, .titleandnotecontainer > * > tr, .titleandnotecontainer > thead, .titleandnotecontainer > tbody, .titleandnotecontainer > tfoot { border: none; }
-.titleandnotecontainer {
-    background-color: #fafbfe;
-    border: none;
-    border-spacing: 1px;
-    color: #000000;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-    width: 100%;
-}
-.titlesandfooters {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.usertext {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-a:visited { color: #800080 }
-.warnbanner {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: bold;
-}
-.warncontent {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: Arial, 'Albany AMT', Helvetica, Helv;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-.warncontentfixed {
-    background-color: #fafbfe;
-    color: #112277;
-    font-family: 'Courier New', Courier;
-    font-size:  normal;
-    font-style: normal;
-    font-weight: normal;
-}
-/*]]>*/
-</style>
-</head>
-<body class="l body">
-<div style="padding-bottom: 8px; padding-top: 1px">
-<div id="IDX" class="systitleandfootercontainer" style="border-spacing: 1px">
-<p><span class="c systemtitle">The SAS System</span> </p>
-</div>
-<div class="proc_title_group">
-<p class="c proctitle">The CONTENTS Procedure</p>
-</div>
-<div style="padding-bottom: 8px; padding-top: 1px">
-<div style="padding-bottom: 8px; padding-top: 1px">
-<table class="table" style="border-spacing: 0" aria-label="Attributes">
-<caption aria-label="Attributes"></caption>
-<colgroup><col/><col/><col/><col/></colgroup>
-<tbody>
-<tr>
-<th class="rowheader" scope="row">Data Set Name</th>
-<td class="data">WORK.SBA</td>
-<th class="rowheader" scope="row">Observations</th>
-<td class="data">899164</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Member Type</th>
-<td class="data">DATA</td>
-<th class="rowheader" scope="row">Variables</th>
-<td class="data">27</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Engine</th>
-<td class="data">V9</td>
-<th class="rowheader" scope="row">Indexes</th>
-<td class="data">0</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Created</th>
-<td class="data">01/31/2020 15:07:32</td>
-<th class="rowheader" scope="row">Observation Length</th>
-<td class="data">216</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Last Modified</th>
-<td class="data">01/31/2020 15:07:32</td>
-<th class="rowheader" scope="row">Deleted Observations</th>
-<td class="data">0</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Protection</th>
-<td class="data">&#160;</td>
-<th class="rowheader" scope="row">Compressed</th>
-<td class="data">NO</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Data Set Type</th>
-<td class="data">&#160;</td>
-<th class="rowheader" scope="row">Sorted</th>
-<td class="data">NO</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Label</th>
-<td class="data">&#160;</td>
-<th class="rowheader" scope="row">&#160;</th>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Data Representation</th>
-<td class="data">SOLARIS_X86_64, LINUX_X86_64, ALPHA_TRU64, LINUX_IA64</td>
-<th class="rowheader" scope="row">&#160;</th>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Encoding</th>
-<td class="data">utf-8  Unicode (UTF-8)</td>
-<th class="rowheader" scope="row">&#160;</th>
-<td class="data">&#160;</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="IDX1" style="padding-bottom: 8px; padding-top: 1px">
-<table class="table" style="border-spacing: 0" aria-label="Engine/Host Information">
-<caption aria-label="Engine/Host Information"></caption>
-<colgroup><col/><col/></colgroup>
-<thead>
-<tr>
-<th class="c b header" colspan="2" scope="colgroup">Engine/Host Dependent Information</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th class="rowheader" scope="row">Data Set Page Size</th>
-<td class="data">65536</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Number of Data Set Pages</th>
-<td class="data">2968</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">First Data Page</th>
-<td class="data">1</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Max Obs per Page</th>
-<td class="data">303</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Obs in First Data Page</th>
-<td class="data">278</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Number of Data Set Repairs</th>
-<td class="data">0</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Filename</th>
-<td class="data">/tmp/SAS_workECBD00000EDC_localhost.localdomain/sba.sas7bdat</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Release Created</th>
-<td class="data">9.0401M6</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Host Created</th>
-<td class="data">Linux</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Inode Number</th>
-<td class="data">541400</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Access Permission</th>
-<td class="data">rw-r--r--</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">Owner Name</th>
-<td class="data">sasdemo</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">File Size</th>
-<td class="data">186MB</td>
-</tr>
-<tr>
-<th class="rowheader" scope="row">File Size (bytes)</th>
-<td class="data">194576384</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="IDX2" style="padding-bottom: 8px; padding-top: 1px">
-<table class="table" style="border-spacing: 0" aria-label="Variables">
-<caption aria-label="Variables"></caption>
-<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/></colgroup>
-<thead>
-<tr>
-<th class="c b header" colspan="5" scope="colgroup">Alphabetic List of Variables and Attributes</th>
-</tr>
-<tr>
-<th class="r b header" scope="col">#</th>
-<th class="b header" scope="col">Variable</th>
-<th class="b header" scope="col">Type</th>
-<th class="r b header" scope="col">Len</th>
-<th class="b header" scope="col">Format</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th class="r rowheader" scope="row">9</th>
-<td class="data">ApprovalDate</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">MMDDYY10.</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">10</th>
-<td class="data">ApprovalFY</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">23</th>
-<td class="data">BalanceGross</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">DOLLAR15.2</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">6</th>
-<td class="data">Bank</td>
-<td class="data">Char</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">7</th>
-<td class="data">BankState</td>
-<td class="data">Char</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">20</th>
-<td class="data">ChgOffDate</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">MMDDYY10.</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">25</th>
-<td class="data">ChgOffPrinGr</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">DOLLAR15.2</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">3</th>
-<td class="data">City</td>
-<td class="data">Char</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">14</th>
-<td class="data">CreateJob</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">21</th>
-<td class="data">DisbursementDate</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">MMDDYY10.</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">22</th>
-<td class="data">DisbursementGross</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">DOLLAR15.2</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">16</th>
-<td class="data">FranchiseCode</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">26</th>
-<td class="data">GrAppv</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">DOLLAR15.2</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">1</th>
-<td class="data">LoanNr_ChkDgt</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">19</th>
-<td class="data">LowDoc</td>
-<td class="data">Char</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">24</th>
-<td class="data">MIS_Status</td>
-<td class="data">Char</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">8</th>
-<td class="data">NAICS</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">2</th>
-<td class="data">Name</td>
-<td class="data">Char</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">13</th>
-<td class="data">NewExist</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">12</th>
-<td class="data">NoEmp</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">15</th>
-<td class="data">RetainedJob</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">18</th>
-<td class="data">RevLineCr</td>
-<td class="data">Char</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">27</th>
-<td class="data">SBA_Appv</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">DOLLAR15.2</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">4</th>
-<td class="data">State</td>
-<td class="data">Char</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">11</th>
-<td class="data">Term</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">17</th>
-<td class="data">Urban_Rural</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-<tr>
-<th class="r rowheader" scope="row">5</th>
-<td class="data">Zip</td>
-<td class="data">Num</td>
-<td class="r data">8</td>
-<td class="data">&#160;</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</body>
-</html>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-sas"><pre><span></span>proc contents data=sba;
-run;
-proc print data=sba (obs=10);
 run;
 </pre></div>
 
@@ -17929,13 +14453,13 @@ a:visited { color: #800080 }
 </tr>
 <tr>
 <th class="rowheader" scope="row">Created</th>
-<td class="data">01/31/2020 15:07:32</td>
+<td class="data">01/31/2020 16:26:37</td>
 <th class="rowheader" scope="row">Observation Length</th>
 <td class="data">216</td>
 </tr>
 <tr>
 <th class="rowheader" scope="row">Last Modified</th>
-<td class="data">01/31/2020 15:07:32</td>
+<td class="data">01/31/2020 16:26:37</td>
 <th class="rowheader" scope="row">Deleted Observations</th>
 <td class="data">0</td>
 </tr>
@@ -18008,7 +14532,7 @@ a:visited { color: #800080 }
 </tr>
 <tr>
 <th class="rowheader" scope="row">Filename</th>
-<td class="data">/tmp/SAS_workECBD00000EDC_localhost.localdomain/sba.sas7bdat</td>
+<td class="data">/tmp/SAS_work5F3900004AE1_localhost.localdomain/sba.sas7bdat</td>
 </tr>
 <tr>
 <th class="rowheader" scope="row">Release Created</th>
@@ -18020,7 +14544,1509 @@ a:visited { color: #800080 }
 </tr>
 <tr>
 <th class="rowheader" scope="row">Inode Number</th>
-<td class="data">541400</td>
+<td class="data">671547</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Access Permission</th>
+<td class="data">rw-r--r--</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Owner Name</th>
+<td class="data">sasdemo</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">File Size</th>
+<td class="data">186MB</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">File Size (bytes)</th>
+<td class="data">194576384</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX2" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Variables">
+<caption aria-label="Variables"></caption>
+<colgroup><col/></colgroup><colgroup><col/><col/><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Alphabetic List of Variables and Attributes</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">#</th>
+<th class="b header" scope="col">Variable</th>
+<th class="b header" scope="col">Type</th>
+<th class="r b header" scope="col">Len</th>
+<th class="b header" scope="col">Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">9</th>
+<td class="data">ApprovalDate</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">MMDDYY10.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">10</th>
+<td class="data">ApprovalFY</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">23</th>
+<td class="data">BalanceGross</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">DOLLAR15.2</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">6</th>
+<td class="data">Bank</td>
+<td class="data">Char</td>
+<td class="r data">8</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">7</th>
+<td class="data">BankState</td>
+<td class="data">Char</td>
+<td class="r data">8</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">20</th>
+<td class="data">ChgOffDate</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">MMDDYY10.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">25</th>
+<td class="data">ChgOffPrinGr</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">DOLLAR15.2</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="data">City</td>
+<td class="data">Char</td>
+<td class="r data">8</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">14</th>
+<td class="data">CreateJob</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">21</th>
+<td class="data">DisbursementDate</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">MMDDYY10.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">22</th>
+<td class="data">DisbursementGross</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">DOLLAR15.2</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">16</th>
+<td class="data">FranchiseCode</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">26</th>
+<td class="data">GrAppv</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">DOLLAR15.2</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="data">LoanNr_ChkDgt</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">19</th>
+<td class="data">LowDoc</td>
+<td class="data">Char</td>
+<td class="r data">8</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">24</th>
+<td class="data">MIS_Status</td>
+<td class="data">Char</td>
+<td class="r data">8</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">8</th>
+<td class="data">NAICS</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="data">Name</td>
+<td class="data">Char</td>
+<td class="r data">8</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">13</th>
+<td class="data">NewExist</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">12</th>
+<td class="data">NoEmp</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">15</th>
+<td class="data">RetainedJob</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">18</th>
+<td class="data">RevLineCr</td>
+<td class="data">Char</td>
+<td class="r data">8</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">27</th>
+<td class="data">SBA_Appv</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">DOLLAR15.2</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="data">State</td>
+<td class="data">Char</td>
+<td class="r data">8</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">11</th>
+<td class="data">Term</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">17</th>
+<td class="data">Urban_Rural</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<td class="data">Zip</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-sas"><pre><span></span>proc contents data=sba;
+run;
+proc print data=sba (obs=10);
+run;
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="SAS 9.4" name="generator"/>
+<title>SAS Output</title>
+<style>
+/*<![CDATA[*/
+.body.c > table, .body.c > pre, .body.c div > table,
+.body.c div > pre, .body.c > table, .body.c > pre,
+.body.j > table, .body.j > pre, .body.j div > table,
+.body.j div > pre, .body.j > table, .body.j > pre,
+.body.c p.note, .body.c p.warning, .body.c p.error, .body.c p.fatal,
+.body.j p.note, .body.j p.warning, .body.j p.error, .body.j p.fatal,
+.body.c > table.layoutcontainer, .body.j > table.layoutcontainer { margin-left: auto; margin-right: auto }
+.layoutregion.l table, .layoutregion.l pre, .layoutregion.l p.note,
+.layoutregion.l p.warning, .layoutregion.l p.error, .layoutregion.l p.fatal { margin-left: 0 }
+.layoutregion.c table, .layoutregion.c pre, .layoutregion.c p.note,
+.layoutregion.c p.warning, .layoutregion.c p.error, .layoutregion.c p.fatal { margin-left: auto; margin-right: auto }
+.layoutregion.r table, .layoutregion.r pre, .layoutregion.r p.note,
+.layoutregion.r table, .layoutregion.r pre, .layoutregion.r p.note,
+.layoutregion.r p.warning, .layoutregion.r p.error, .layoutregion.r p.fatal { margin-right: 0 }
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block }
+html{ font-size: 100% }
+.body { margin: 1em; font-size: 13px; line-height: 1.231 }
+sup { position: relative; vertical-align: baseline; bottom: 0.25em; font-size: 0.8em }
+sub { position: relative; vertical-align: baseline; top: 0.25em; font-size: 0.8em }
+ul, ol { margin: 1em 0; padding: 0 0 0 40px }
+dd { margin: 0 0 0 40px }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0 }
+img { border: 0; vertical-align: middle }
+svg:not(:root) { overflow: hidden }
+figure { margin: 0 }
+table { border-collapse: collapse; border-spacing: 0 }
+.layoutcontainer { border-collapse: separate; border-spacing: 0 }
+p { margin-top: 0; text-align: left }
+h1.heading1 { text-align: left }
+h2.heading2 { text-align: left }
+h3.heading3 { text-align: left }
+h4.heading4 { text-align: left }
+h5.heading5 { text-align: left }
+h6.heading6 { text-align: left }
+span { text-align: left }
+table { margin-bottom: 1em }
+td, th { text-align: left; padding: 3px 6px; vertical-align: top }
+td[class$="fixed"], th[class$="fixed"] { white-space: pre }
+section, article { padding-top: 1px; padding-bottom: 8px }
+hr.pagebreak { height: 0px; border: 0; border-bottom: 1px solid #c0c0c0; margin: 1em 0 }
+.stacked-value { text-align: left; display: block }
+.stacked-cell > .stacked-value, td.data > td.data, th.data > td.data, th.data > th.data, td.data > th.data, th.header > th.header { border: 0 }
+.stacked-cell > div.data { border-width: 0 }
+.systitleandfootercontainer { white-space: nowrap; margin-bottom: 1em }
+.systitleandfootercontainer > p { margin: 0 }
+.systitleandfootercontainer > p > span { display: inline-block; width: 100%; white-space: normal }
+.batch { display: table }
+.toc { display: none }
+.proc_note_group, .proc_title_group { margin-bottom: 1em }
+p.proctitle { margin: 0 }
+p.note, p.warning, p.error, p.fatal { display: table }
+.notebanner, .warnbanner, .errorbanner, .fatalbanner,
+.notecontent, .warncontent, .errorcontent, .fatalcontent { display: table-cell; padding: 0.5em }
+.notebanner, .warnbanner, .errorbanner, .fatalbanner { padding-right: 0 }
+.body > div > ol li { text-align: left }
+.beforecaption > h4 { margin-top: 0; margin-bottom: 0 }
+.c { text-align: center }
+.r { text-align: right }
+.l { text-align: left }
+.j { text-align: justify }
+.d { text-align: right }
+.b { vertical-align: bottom }
+.m { vertical-align: middle }
+.t { vertical-align: top }
+.accessiblecaption {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+a:active { color: #800080 }
+.aftercaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+    padding-top: 4pt;
+}
+.batch > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.batch > tbody, .batch > thead, .batch > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.batch { border: hidden; }
+.batch {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    padding: 7px;
+    }
+.beforecaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.body {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.bodydate {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    text-align: right;
+    vertical-align: top;
+    width: 100%;
+}
+.bycontentfolder {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.byline {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.bylinecontainer > col, .bylinecontainer > colgroup > col, .bylinecontainer > colgroup, .bylinecontainer > tr, .bylinecontainer > * > tr, .bylinecontainer > thead, .bylinecontainer > tbody, .bylinecontainer > tfoot { border: none; }
+.bylinecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.caption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.cell, .container {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+}
+.contentfolder, .contentitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.contentproclabel, .contentprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.contents {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.contentsdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.contenttitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: italic;
+    font-weight: bold;
+}
+.continued {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+    width: 100%;
+}
+.data, .dataemphasis {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+}
+.dataemphasisfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:  normal;
+    font-style: italic;
+    font-weight: normal;
+}
+.dataempty {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+}
+.datafixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+}
+.datastrong {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.datastrongfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.date {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.document {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+}
+.errorbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.errorcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+}
+.errorcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+}
+.extendedpage {
+    background-color: #fafbfe;
+    border-style: solid;
+    border-width: 1pt;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+}
+.fatalbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.fatalcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+}
+.fatalcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+}
+.folderaction {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.footer {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.footeremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: italic;
+    font-weight: normal;
+}
+.footeremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:  normal;
+    font-style: italic;
+    font-weight: normal;
+}
+.footerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.footerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+}
+.footerstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.footerstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.frame {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+}
+.graph > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.graph > tbody, .graph > thead, .graph > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.graph { border: hidden; }
+.graph {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    }
+.header {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.headeremphasis {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: italic;
+    font-weight: normal;
+}
+.headeremphasisfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:  normal;
+    font-style: italic;
+    font-weight: normal;
+}
+.headerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.headerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+}
+.headersandfooters {
+    background-color: #edf2f9;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.headerstrong {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.headerstrongfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.heading1, .heading2, .heading3, .heading4, .heading5, .heading6 { font-family: Arial, Helvetica, sans-serif }
+.index {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+}
+.indexaction, .indexitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.indexprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.indextitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: italic;
+    font-weight: bold;
+}
+.layoutcontainer, .layoutregion {
+    border-width: 0;
+    border-spacing: 30px;
+}
+.linecontent {
+    background-color: #fafbfe;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+}
+a:link { color: #0000ff }
+.list {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.list10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.list2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.list3, .list4, .list5, .list6, .list7, .list8, .list9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.listitem {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.listitem10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.listitem2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.listitem3, .listitem4, .listitem5, .listitem6, .listitem7, .listitem8, .listitem9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.note {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+}
+.notebanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.notecontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+}
+.notecontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+}
+.output > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.output > tbody, .output > thead, .output > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.output { border: hidden; }
+.output {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    }
+.pageno {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+    text-align: right;
+    vertical-align: top;
+}
+.pages {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.pagesdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.pagesitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.pagesproclabel, .pagesprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.pagestitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: italic;
+    font-weight: bold;
+}
+.paragraph {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+}
+.parskip > col, .parskip > colgroup > col, .parskip > colgroup, .parskip > tr, .parskip > * > tr, .parskip > thead, .parskip > tbody, .parskip > tfoot { border: none; }
+.parskip {
+    border: none;
+    border-spacing: 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+    }
+.prepage {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    text-align: left;
+}
+.proctitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.proctitlefixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowfooter {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowfooteremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: italic;
+    font-weight: normal;
+}
+.rowfooteremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:  normal;
+    font-style: italic;
+    font-weight: normal;
+}
+.rowfooterempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowfooterfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+}
+.rowfooterstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowfooterstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowheader {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowheaderemphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: italic;
+    font-weight: normal;
+}
+.rowheaderemphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:  normal;
+    font-style: italic;
+    font-weight: normal;
+}
+.rowheaderempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowheaderfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+}
+.rowheaderstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowheaderstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.systemfooter, .systemfooter10, .systemfooter2, .systemfooter3, .systemfooter4, .systemfooter5, .systemfooter6, .systemfooter7, .systemfooter8, .systemfooter9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+}
+.systemtitle, .systemtitle10, .systemtitle2, .systemtitle3, .systemtitle4, .systemtitle5, .systemtitle6, .systemtitle7, .systemtitle8, .systemtitle9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: small;
+    font-style: normal;
+    font-weight: bold;
+}
+.systitleandfootercontainer > col, .systitleandfootercontainer > colgroup > col, .systitleandfootercontainer > colgroup, .systitleandfootercontainer > tr, .systitleandfootercontainer > * > tr, .systitleandfootercontainer > thead, .systitleandfootercontainer > tbody, .systitleandfootercontainer > tfoot { border: none; }
+.systitleandfootercontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.table > col, .table > colgroup > col {
+    border-left: 1px solid #c1c1c1;
+    border-right: 0 solid #c1c1c1;
+}
+.table > tr, .table > * > tr {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 0 solid #c1c1c1;
+}
+.table { border: hidden; }
+.table {
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 1px 0 0 1px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    }
+.titleandnotecontainer > col, .titleandnotecontainer > colgroup > col, .titleandnotecontainer > colgroup, .titleandnotecontainer > tr, .titleandnotecontainer > * > tr, .titleandnotecontainer > thead, .titleandnotecontainer > tbody, .titleandnotecontainer > tfoot { border: none; }
+.titleandnotecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.titlesandfooters {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.usertext {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+}
+a:visited { color: #800080 }
+.warnbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: bold;
+}
+.warncontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+}
+.warncontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size:  normal;
+    font-style: normal;
+    font-weight: normal;
+}
+/*]]>*/
+</style>
+</head>
+<body class="l body">
+<div style="padding-bottom: 8px; padding-top: 1px">
+<div id="IDX" class="systitleandfootercontainer" style="border-spacing: 1px">
+<p><span class="c systemtitle">The SAS System</span> </p>
+</div>
+<div class="proc_title_group">
+<p class="c proctitle">The CONTENTS Procedure</p>
+</div>
+<div style="padding-bottom: 8px; padding-top: 1px">
+<div style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Attributes">
+<caption aria-label="Attributes"></caption>
+<colgroup><col/><col/><col/><col/></colgroup>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Data Set Name</th>
+<td class="data">WORK.SBA</td>
+<th class="rowheader" scope="row">Observations</th>
+<td class="data">899164</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Member Type</th>
+<td class="data">DATA</td>
+<th class="rowheader" scope="row">Variables</th>
+<td class="data">27</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Engine</th>
+<td class="data">V9</td>
+<th class="rowheader" scope="row">Indexes</th>
+<td class="data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Created</th>
+<td class="data">01/31/2020 16:26:37</td>
+<th class="rowheader" scope="row">Observation Length</th>
+<td class="data">216</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Last Modified</th>
+<td class="data">01/31/2020 16:26:37</td>
+<th class="rowheader" scope="row">Deleted Observations</th>
+<td class="data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protection</th>
+<td class="data">&#160;</td>
+<th class="rowheader" scope="row">Compressed</th>
+<td class="data">NO</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Data Set Type</th>
+<td class="data">&#160;</td>
+<th class="rowheader" scope="row">Sorted</th>
+<td class="data">NO</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Label</th>
+<td class="data">&#160;</td>
+<th class="rowheader" scope="row">&#160;</th>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Data Representation</th>
+<td class="data">SOLARIS_X86_64, LINUX_X86_64, ALPHA_TRU64, LINUX_IA64</td>
+<th class="rowheader" scope="row">&#160;</th>
+<td class="data">&#160;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Encoding</th>
+<td class="data">utf-8  Unicode (UTF-8)</td>
+<th class="rowheader" scope="row">&#160;</th>
+<td class="data">&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="IDX1" style="padding-bottom: 8px; padding-top: 1px">
+<table class="table" style="border-spacing: 0" aria-label="Engine/Host Information">
+<caption aria-label="Engine/Host Information"></caption>
+<colgroup><col/><col/></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Engine/Host Dependent Information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Data Set Page Size</th>
+<td class="data">65536</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Number of Data Set Pages</th>
+<td class="data">2968</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">First Data Page</th>
+<td class="data">1</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Max Obs per Page</th>
+<td class="data">303</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Obs in First Data Page</th>
+<td class="data">278</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Number of Data Set Repairs</th>
+<td class="data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Filename</th>
+<td class="data">/tmp/SAS_work5F3900004AE1_localhost.localdomain/sba.sas7bdat</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Release Created</th>
+<td class="data">9.0401M6</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Host Created</th>
+<td class="data">Linux</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Inode Number</th>
+<td class="data">671547</td>
 </tr>
 <tr>
 <th class="rowheader" scope="row">Access Permission</th>
@@ -18611,11 +16637,14 @@ a:visited { color: #800080 }
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-sas"><pre><span></span>data sba_2;
     set sba(keep=Name City State ApprovalFY NoEmp MIS_Status GrAppv SBA_Appv);
+run;
+proc sort data=sba_2;
+    by ApprovalFY;
 run;
 proc print data=sba_2 (obs=10);
 run;
@@ -18631,7 +16660,7 @@ run;
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -19769,113 +17798,113 @@ a:visited { color: #800080 }
 <tbody>
 <tr>
 <th class="r rowheader" scope="row">1</th>
-<td class="data">ABC HOBB</td>
-<td class="data">EVANSVIL</td>
-<td class="data">IN</td>
-<td class="r data">1997</td>
-<td class="r data">4</td>
-<td class="data">P I F</td>
-<td class="r data">$60,000.00</td>
-<td class="r data">$48,000.00</td>
+<td class="data">FASHION</td>
+<td class="data">CARLSTAD</td>
+<td class="data">NJ</td>
+<td class="r data">.</td>
+<td class="r data">36</td>
+<td class="data">CHGOFF</td>
+<td class="r data">$350,000.00</td>
+<td class="r data">$315,000.00</td>
 </tr>
 <tr>
 <th class="r rowheader" scope="row">2</th>
-<td class="data">LANDMARK</td>
-<td class="data">NEW PARI</td>
-<td class="data">IN</td>
-<td class="r data">1997</td>
-<td class="r data">2</td>
-<td class="data">P I F</td>
-<td class="r data">$40,000.00</td>
-<td class="r data">$32,000.00</td>
+<td class="data">J W HUGH</td>
+<td class="data">FOLLETT</td>
+<td class="data">TX</td>
+<td class="r data">.</td>
+<td class="r data">29</td>
+<td class="data">CHGOFF</td>
+<td class="r data">$325,000.00</td>
+<td class="r data">$292,500.00</td>
 </tr>
 <tr>
 <th class="r rowheader" scope="row">3</th>
-<td class="data">WHITLOCK</td>
-<td class="data">BLOOMING</td>
+<td class="data">CROWN PO</td>
+<td class="data">CROWN PO</td>
 <td class="data">IN</td>
-<td class="r data">1997</td>
-<td class="r data">7</td>
-<td class="data">P I F</td>
-<td class="r data">$287,000.00</td>
-<td class="r data">$215,250.00</td>
+<td class="r data">.</td>
+<td class="r data">5</td>
+<td class="data">CHGOFF</td>
+<td class="r data">$145,000.00</td>
+<td class="r data">$130,500.00</td>
 </tr>
 <tr>
 <th class="r rowheader" scope="row">4</th>
-<td class="data">BIG BUCK</td>
-<td class="data">BROKEN A</td>
-<td class="data">OK</td>
-<td class="r data">1997</td>
+<td class="data">BAUMAN&apos;S</td>
+<td class="data">ODESSA</td>
+<td class="data">NY</td>
+<td class="r data">.</td>
 <td class="r data">2</td>
-<td class="data">P I F</td>
-<td class="r data">$35,000.00</td>
-<td class="r data">$28,000.00</td>
+<td class="data">CHGOFF</td>
+<td class="r data">$15,000.00</td>
+<td class="r data">$13,500.00</td>
 </tr>
 <tr>
 <th class="r rowheader" scope="row">5</th>
-<td class="data">ANASTASI</td>
-<td class="data">ORLANDO</td>
-<td class="data">FL</td>
-<td class="r data">1997</td>
-<td class="r data">14</td>
-<td class="data">P I F</td>
-<td class="r data">$229,000.00</td>
-<td class="r data">$229,000.00</td>
+<td class="data">THE TOGG</td>
+<td class="data">SPRINGFI</td>
+<td class="data">MA</td>
+<td class="r data">.</td>
+<td class="r data">5</td>
+<td class="data">CHGOFF</td>
+<td class="r data">$73,000.00</td>
+<td class="r data">$40,150.00</td>
 </tr>
 <tr>
 <th class="r rowheader" scope="row">6</th>
-<td class="data">B&amp;T SCRE</td>
-<td class="data">PLAINVIL</td>
-<td class="data">CT</td>
-<td class="r data">1997</td>
-<td class="r data">19</td>
-<td class="data">P I F</td>
-<td class="r data">$517,000.00</td>
-<td class="r data">$387,750.00</td>
+<td class="data">JUSTIN T</td>
+<td class="data">COLUMBUS</td>
+<td class="data">OH</td>
+<td class="r data">.</td>
+<td class="r data">10</td>
+<td class="data">CHGOFF</td>
+<td class="r data">$150,000.00</td>
+<td class="r data">$135,000.00</td>
 </tr>
 <tr>
 <th class="r rowheader" scope="row">7</th>
-<td class="data">MIDDLE A</td>
-<td class="data">UNION</td>
-<td class="data">NJ</td>
-<td class="r data">1980</td>
-<td class="r data">45</td>
+<td class="data">MICHAELS</td>
+<td class="data">CHICAGO</td>
+<td class="data">IL</td>
+<td class="r data">.</td>
+<td class="r data">3</td>
 <td class="data">CHGOFF</td>
-<td class="r data">$600,000.00</td>
-<td class="r data">$499,998.00</td>
+<td class="r data">$550,000.00</td>
+<td class="r data">$495,000.00</td>
 </tr>
 <tr>
 <th class="r rowheader" scope="row">8</th>
-<td class="data">WEAVER P</td>
-<td class="data">SUMMERFI</td>
-<td class="data">FL</td>
-<td class="r data">1997</td>
+<td class="data">MIKE ESP</td>
+<td class="data">UVALDE</td>
+<td class="data">TX</td>
+<td class="r data">.</td>
 <td class="r data">1</td>
-<td class="data">P I F</td>
-<td class="r data">$45,000.00</td>
-<td class="r data">$36,000.00</td>
+<td class="data">CHGOFF</td>
+<td class="r data">$85,000.00</td>
+<td class="r data">$76,500.00</td>
 </tr>
 <tr>
 <th class="r rowheader" scope="row">9</th>
-<td class="data">TURTLE B</td>
-<td class="data">PORT SAI</td>
-<td class="data">FL</td>
-<td class="r data">1997</td>
-<td class="r data">2</td>
-<td class="data">P I F</td>
-<td class="r data">$305,000.00</td>
-<td class="r data">$228,750.00</td>
+<td class="data">JUG &amp; JI</td>
+<td class="data">YUCAIPA</td>
+<td class="data">CA</td>
+<td class="r data">.</td>
+<td class="r data">3</td>
+<td class="data">CHGOFF</td>
+<td class="r data">$94,500.00</td>
+<td class="r data">$85,050.00</td>
 </tr>
 <tr>
 <th class="r rowheader" scope="row">10</th>
-<td class="data">INTEXT B</td>
-<td class="data">GLASTONB</td>
-<td class="data">CT</td>
-<td class="r data">1997</td>
-<td class="r data">3</td>
+<td class="data">FANGMAN</td>
+<td class="data">DYERSVIL</td>
+<td class="data">IA</td>
+<td class="r data">.</td>
+<td class="r data">9</td>
 <td class="data">P I F</td>
-<td class="r data">$70,000.00</td>
-<td class="r data">$56,000.00</td>
+<td class="r data">$72,000.00</td>
+<td class="r data">$64,800.00</td>
 </tr>
 </tbody>
 </table>
@@ -19894,7 +17923,7 @@ a:visited { color: #800080 }
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-sas"><pre><span></span>data sba_3;
@@ -19909,9 +17938,6 @@ a:visited { color: #800080 }
  if Total_Employees &lt;= 20 and  Total_Employees &gt;=  2 then Business_Size=&quot;Medium&quot;;
  if Total_Employees &gt;  20 then Business_Size=&quot;Large&quot;;
  drop NoEmp ApprovalFY MIS_Status GrAppv SBA_Appv;
-run;
-proc sort data=sba_3;
-    by Approval_Year;
 run;
 proc print data=sba_3 (obs=10);
     where city=&quot;Dover&quot; and state=&quot;DE&quot;;
@@ -19928,7 +17954,7 @@ run;
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[33]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -21148,7 +19174,7 @@ a:visited { color: #800080 }
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-sas"><pre><span></span>data basicstats;
@@ -21180,7 +19206,7 @@ run;
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[38]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -25576,7 +23602,7 @@ a:visited { color: #800080 }
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-sas"><pre><span></span>data props;
@@ -25608,7 +23634,7 @@ run;
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[41]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
