@@ -1,0 +1,95 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Station Pre-Quiz - Week 2
+
+Grading Rubric (per question):  
+2 points if complete and correct  
+1 point if incomplete or incorrect  
+0 points if no attempt made  
+
+The following questions should be completed with your mates at the station you decided to sit at today. Each person at the station should submit their answers by committing and pushing their own file. You all have 50 minutes (i.e. the end of class) to complete these questions. Do not change anything in this file above the line.
+
+
+***
+
+0. Pull this Rmd file from the **assignments_sp20** repo. Copy it into your personal repo to begin answering the questions, but rename the file as station_prequiz_week_02_Netid.Rmd (GitHub)
+
+1. Using Markdown syntax (not R syntax), make a list of the first and last names all mates (including yourself) at your station. (Markdown)
+
+2. Look through the Datasets file which contains basic information about the **SBA Loans Data** (see course website). Read about it and use RStudio and the particular tidyverse functionality to import the data from the URL. Rename the data object as "sba" using the assignment operator `<-`. (R, Accessing and Importing Data)
+```{r}
+library(tidyverse)
+sba <- read_csv("https://uofi.box.com/shared/static/vi37omgitiaa2yyplrom779qvwk1g14x.csv")
+```
+
+
+
+3. After importing, run the following code on your already read-in data: (R)
+```{r}
+dim(sba)
+colnames(sba)
+head(sba)
+tail(sba)
+```
+
+4. Download the package called **skimr** and run the code: (R)
+```{r}
+library(skimr)
+skim(sba)
+```
+How is `skim(sba)` different from `summary(sba)`?
+
+skim gives a much more detailed output. summary only shows 6 summary statistics
+
+5. Using the visualization below, answer the following questions with Markdown syntax.
+  - What's happening in the visualization?
+      
+  - What do you think the corners of the shapes mean?
+  - What do you think the subject matter is?
+  - What's not clear about it?
+  - Come up with an interesting main title.  
+
+![](https://uofi.box.com/shared/static/m87snzffd69q7408f2wx78qvly1khrib.png)
+
+
+6. Now, physically move to another station and ask one person the same questions in **Problem 5** (above). Write down their first and last name as well as their answers to those questions get credit for this **Problem 6** with Markdown syntax.
+
+7. Use `read.csv` (the standard R functionality) to import the same sba data from **Problem 2** above. Use R code to record the time difference in seconds between reading the sba data with `read.csv` vs the `read_csv`. *You must write R code for this problem, not handwritten time differences.* (R, Data Wrangling)
+```{r}
+system.time(
+  sba2 <- read.csv("https://uofi.box.com/shared/static/vi37omgitiaa2yyplrom779qvwk1g14x.csv", header = TRUE)
+)
+
+```
+
+```{r}
+system.time(
+  sba <- read_csv("https://uofi.box.com/shared/static/vi37omgitiaa2yyplrom779qvwk1g14x.csv")
+)
+
+```
+
+
+
+8.  Create a new subset of the SBA Business Loans Data that contains the following 8 variables: Name, City, State, ApprovalFY (approval year), NoEmp (number of employees), MIS_Status (either charged off or paid in full), GrAppv (gross approved amount), and SBA_Appv (SBA approved amount). Show only the first 10 rows of the new subset with the columns in this order of appearance sorted by ApprovalFY from oldest to newest order. (R, Data Wrangling)
+```{r}
+subset <- select(sba, Name, City, State, ApprovalFY, NoEmp, MIS_Status, GrAppv, SBA_Appv)
+head(arrange(subset, ApprovalFY),10)
+```
+
+
+9. Using the subset from **Problem 8** , rename the variables: NoEmp to "Total_Employees", ApprovalFY to "Approval_Year", MIS_Status to "Loan_Status", GrAppv to "Gross_Approved_Amount", and SBA_Appv to "SBA_Approved_Amount". Show only the first 10 rows of the subset. (R, Data Wrangling)
+```{r}
+head(rename(subset, Total_Employees = NoEmp, Approval_Year = ApprovalFY, Gross_Approved_Amount = GrAppv, SBA_Approved_Amount = SBA_Appv), 10)
+```
+
+
+10. Create and name a data subset "basicstats" that builds from **Problem 9** and adheres to the following conditions.
+  - remove all NA or missing values before doing the computation  
+  - computes the mean, median, mode (most frequent value), variance, standard deviation, and MADM scale estimate (not just the MADM) for the Gross Approved Amount per Business Size per Approval Year  
+  - this subset should have 1 row per Approval Year and Business Size combination  
+Now, show the first 15 rows of this new subset (R, Data Wrangling)
+
+
