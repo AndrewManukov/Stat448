@@ -1,3 +1,8 @@
+#Problem: Wheres the best place to start my business so I can get the most loan $$$
+#Plan: Create a plot and bar chart to best signify optimal locations
+#Data: SBA, mean DisbursementGross, Lat/Long of all cities.
+#Analysis/Conclusion: Bar graph clearly shows upper illinois gets an extra 30k. Probably thanks to chicago.
+
 #import libs
 library(ggplot2)
 library(tidyverse)
