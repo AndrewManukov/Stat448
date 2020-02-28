@@ -182,6 +182,32 @@ arrange(inspections,desc(totalviolations))
 
 
 ```{r p9}
+set.seed(448)
+ids<-sample(nrow(inspections),floor(0.75*nrow(inspections)))
+trainingData <- inspections[ids,]
+testingData <- inspections[-ids,]
+
+colnames(inspections)
+
+#Classification Tree
+trainingData_response <- trainingData$results
+testingData_response <- testingData$results
+
+trainingData_predictors = select(trainingData, -c(passornot))
+testingData_predictors = select(trainingData, -c(passornot))
+
+library(tree)
+response <- factor(trainingData_response)
+fittree <- tree(response ~ totalviolations + criticalviolations + seriousviolations + violationseverity , data = trainingData)
+summary(fittree)
+plot(fittree)
+text(fittree, pretty=0)
+
+trainpredz <- predict(fittree, trainingData, type="class")
+table(trainpredz,trainingData_response) 
+mean(trainpredz==trainingData_response)
+mean(trainpredz!=trainingData_response) 
+table(trainingData_response)/sum(table(trainingData_response)) #comparing to testing prior proportions
 
 ```
 
