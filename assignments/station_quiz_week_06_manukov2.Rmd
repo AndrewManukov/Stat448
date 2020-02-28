@@ -103,7 +103,7 @@ inspections <- na.omit(inspections)
 ```{r p5}
 ggplot(data = inspections) +
   geom_point(mapping = aes(x = longitude, y = latitude, color = factor(passornot))) +
-  ggtitle("Restaurants in Chicago") + coord_map()
+  ggtitle("Restaurants in Chicago") + coord_map() + labs(color = "Pass Inspections(1) or Not(0)")
 
 ```
 
