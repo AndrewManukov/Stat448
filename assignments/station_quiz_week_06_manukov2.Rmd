@@ -62,6 +62,7 @@ Now, print the first 10 observations of **inspections** with only the variables:
 
 
 ```{r p4}
+library(tidyverse)
 inspections <- read_csv("https://uofi.box.com/shared/static/5637axblfhajotail80yw7j2s4r27hxd.csv",
 	col_types = cols(Address = col_skip(),
     	`Census Tracts` = col_skip(), City = col_skip(),
