@@ -1,0 +1,190 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Station Quiz - Week 6
+
+Grading Rubric:  
+2 points if complete and correct  
+1 point if incomplete or incorrect  
+0 points if no attempt made  
+
+The following questions should be completed with your mates at the station you decided to sit at today. Your station should designate one person to be the one who submits (commits/pushes) the answers to the quiz in their repo. We'll call this person the **designated submitter**. You all have 50 minutes (i.e. the end of class) to complete these questions. Do not change anything in this file above the line.
+
+***
+
+**#0** Pull this ipynb file from your respective **assignments_section_sp20** repo; either **assignments_section2_sp20** or **assignments_section3_sp20**. Copy it into your personal repo to begin answering the questions, but rename the file as station_quiz_week_04_Netid.ipynb with your Netid. (GitHub)
+
+***
+
+**#1** Using Markdown syntax (not R syntax), make a list of the first and last names all mates (including yourself) at your station, and write the designated submitter's name in **bold** font. (Markdown)  
+
+
+Edward Chen
+Emily Ciaccio
+Mehmet Yalcin Aydin
+Brein Mosely
+Junjing Liu
+**Andro Manukov**
+
+***
+
+**#2** Using the visualization below, describe what's happening in the plot.
+![](https://uofi.box.com/shared/static/1db2sijf7kx7ajb99s4dkjboq7s21skp.png)
+
+
+
+
+2. The diagram below shows the change in greenhouse gases output by source from 1990 to 2017, both graphs specifically put emphasis on the amount of greenhouse gases produced by transportation.  The graph on the left divide transportation into specific transportation types, it emphasizes on how automotive vehicles contribute the largest proportion of transportation’s production of greenhouse gases in the US.
+
+***
+
+**#3**  Now, physically move to another station and ask one person the same questions in **Problem 2** (above). Write down their first and last name as well as their answers to those questions get credit for this **Problem 3** with Markdown syntax.  
+
+3. Mallory root  
+Mallory wrote “The first visualization shows the amount of greenhouse gases based on the industry producing them. Electricity appears to produce the highest amount of greenhouse gases. The second visualization shows the amount based on type of vehicle. It shows the passenger vehicles give off a large proportion of the amount of greenhouse gases.”
+
+
+***
+
+**#4** Look through the links about the Chicago Food Inspections Data [link-1](https://data.cityofchicago.org/api/assets/BAD5301B-681A-4202-9D25-51B2CAE672FF), [link-2](https://www.chicago.gov/city/en/depts/cdph/provdrs/healthy_restaurants/svcs/food-protection-services.html), and [link-3](http://dev.cityofchicago.org/open%20data/data%20portal/2018/06/29/food-violations-changes.html) to get more familiar with it. Using R, import the data and be sure to adhere to the following:  
+
+  - filters the data to keep only the unique (based on license #) restaurants which are high risk and have license #s greater than 0
+  - creates a new variable called "total violations" that counts the number of violations each business had
+  - creates a new variable called "passornot" that equals 1 if the restaurant passes the inspection (does not include passing with conditions) and 0 otherwise
+  - drops only the following variables: dba name and zip
+  - removes all missing values from the kept variables
+  - rename the data object as **inspections**. 
+
+Now, print the first 10 observations of **inspections** with only the variables: aka name, risk, results, and totalviolations. ***To check if you're correct: the inspections data should have 8892 observations.*** (R, Accessing and Importing Data, Data Wrangling)
+
+
+
+```{r p4}
+inspections <- read_csv("https://uofi.box.com/shared/static/5637axblfhajotail80yw7j2s4r27hxd.csv",
+	col_types = cols(Address = col_skip(),
+    	`Census Tracts` = col_skip(), City = col_skip(),
+    	`Community Areas` = col_skip(), `Historical Wards 2003-2015` = col_skip(),
+    	`Inspection Date` = col_date(format = "%m/%d/%Y"),
+    	Location = col_skip(), State = col_skip(),
+    	Wards = col_skip(), `Zip Codes` = col_skip()))
+```
+
+```{r}
+library(stringr)
+library(dplyr)
+library(readr)
+colnames(inspections) <- tolower(colnames(inspections))
+
+inspections = inspections[!duplicated(inspections[4]),]
+
+inspections <- subset(inspections, `license #` > 0 & risk == "Risk 1 (High)")
+
+inspections$totalviolations <- str_count(inspections$violations, "\\|") +1
+
+inspections = mutate(inspections, passornot = ifelse(results == "Pass w/Conditions" | results == "Pass", 1, 0))
+
+inspections = inspections[-c(2, 9),]
+
+inspections <- na.omit(inspections)
+
+```
+
+
+
+***
+
+**#5** Using R and beginning with the original **inspections** data in **Problem 4**, recreate the data visualization below. (R, Data Visualization)
+
+![](https://uofi.box.com/shared/static/bkqt36qf4qn4fu5mu2xpdmz5rhr1y81j.png)
+
+
+```{r p5}
+ggplot(data = inspections) +
+  geom_point(mapping = aes(x = longitude, y = latitude, color = factor(passornot))) +
+  ggtitle("Restaurants in Chicago") + coord_map()
+
+```
+
+
+
+***
+
+**#6** ***This problem is worth 4 points if complete and correct; 2 points if incomplete or incorrect; 0 points if no attempt made.*** According to the Chicago Department of Public Health, "Establishments receiving a 'pass' were found to have no critical or serious violations". A critical violation is one that includes any of the numbered violations 1-14. A serious violation is one that includes any of the numbered violations 15-29. 
+
+The tidyverse code below creates a new variable called "criticalviolations" that counts the number of critical violations in the **inspections** data.
+```
+library(tidyverse)
+cmt <- array(0,c(nrow(inspections),14))
+for (i in 1:ncol(cmt))
+cmt[,i] <- str_count(inspections$violations, paste0("^",i,"\\. | ",i,"\\. ")) 
+inspections$criticalviolations <- rowSums(cmt)
+```
+
+With R, assuming you completed **Problem 4** correctly, and assuming that you have run the code chunk above, do add the following new items to the **inspections** data that:  
+
+  - creates a new variable called "seriousviolations" that counts the number of serious  violations  
+  - creates a new variable called "violationseverity" that equals 1 if the restaurant has either a critical or a serious violation or both and equals 0 if the restaurant does not have either a critical or serious violation  
+  - sorts the data by totalviolations in descending order  
+
+Now, print the first 10 observations of **inspections** with only the variables: aka name, results, totalviolations, criticalviolations, seriousviolations, and violationseverity. (R, Data Wrangling)  
+
+
+```{r p6}
+colnames(inspections) = tolower(colnames(inspections))
+library(tidyverse)
+cmt <- array(0,c(nrow(inspections),14))
+for (i in 1:ncol(cmt))
+cmt[,i] <- str_count(inspections$violations, paste0("^",i,"\\. | ",i,"\\. ")) 
+inspections$criticalviolations <- rowSums(cmt)
+cmt2 <- array(15,c(nrow(inspections),21))
+for (i in 1:ncol(cmt2))
+cmt2[,i] <- str_count(inspections$violations, paste0("^",i,"\\. | ",i,"\\. ")) 
+inspections$seriousviolations <- rowSums(cmt2)
+inspections = mutate(inspections , violationseverity = ifelse(criticalviolations ==0 & seriousviolations==0, 0, 1))
+
+arrange(inspections,desc(totalviolations))
+
+```
+
+
+***
+
+**#7** Using R and beginning with the **inspections** data in **Problem 5**, determine if there is any multicollinearity among the variables: latitude, longitude, passornot, totalviolations, criticalviolations, seriousviolations, and violationseverity. Also, explain which why there is or isn't any multicollinearity issue among the variables. *You should consider Pearson and Spearman correlation measures.* (R, GLM, Data Descriptives, Data Visualization, Markdown)
+
+
+```{r p7}
+
+```
+
+***
+
+**#8** Using R and beginning with the **inspections** data in **Problem 5**, fit a "best" logistic regression model to predict whether a restaurant passes its inspection with the following predictors: totalviolations, criticalviolations, seriousviolations, and violationseverity.  
+
+*The "best" means you should choose among a set of models either manually, using a criterion, or automatic selection. You must show the results of more than one model to get full credit for this problem. For violationseverity, the reference level should be the 0 level. You should still consider if there are any multicollinearity issues. Do not partition the data into training and testing sets.*
+
+  - Describe the results of the method and how good it is at predicting whether a restaurant passes its inspection. Be sure to interpret the predictor's affect on the response in terms of the odds ratio. (R, GLM - Logistic Regression, Markdown)
+
+
+```{r p8}
+
+```
+
+***
+
+**#9** Using R and beginning with the **inspections** data in **Problem 5**, fit a "best" classification tree to predict whether a restaurant passes its inspection with the following predictors: totalviolations, criticalviolations, seriousviolations, and violationseverity.  
+
+*The "best" means you should choose among a set of models either manually, using a criterion, or automatic selection. You must show the results of more than one model to get full credit for this problem. For violationseverity, the reference level should be the 0 level. You should still consider if there are any multicollinearity issues. Do not partition the data into training and testing sets.*
+
+  - Describe the results of the method and how good it is at predicting whether a restaurant passes its inspection.     
+  - Describe which method (logistic regression vs classification tree) works better and give justification for that. (R, Classification Tree, Data Visualization, Markdown)
+
+
+```{r p9}
+
+```
+
+***
+
+**#00** The **designated submitter** should commit and push the file to their repo with the commit message "All Done".
