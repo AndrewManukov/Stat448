@@ -156,8 +156,17 @@ arrange(inspections,desc(totalviolations))
 
 ```{r p7}
 
-```
+inspections_7 = select(inspections, latitude, longitude, passornot, totalviolations, criticalviolations, seriousviolations, violationseverity)
 
+dim(inspections_7)
+
+cor(inspections_7)
+pairs(inspections_7)
+
+```
+latitude and longitude have the multicollinearity issue. criticalviolations and seriousviolations have the multicollinearity issue  
+criticalviolations and seriousviolations are correlated because these two are violations.  
+Pearson and Spearman corrleation shows the multicollinearity too.
 ***
 
 **#8** Using R and beginning with the **inspections** data in **Problem 5**, fit a "best" logistic regression model to predict whether a restaurant passes its inspection with the following predictors: totalviolations, criticalviolations, seriousviolations, and violationseverity.  
@@ -167,10 +176,27 @@ arrange(inspections,desc(totalviolations))
   - Describe the results of the method and how good it is at predicting whether a restaurant passes its inspection. Be sure to interpret the predictor's affect on the response in terms of the odds ratio. (R, GLM - Logistic Regression, Markdown)
 
 
-```{r p8}
+```{r p8, warning=FALSE}
+log_form = formula(passornot ~ totalviolations + criticalviolations + seriousviolations + violationseverity)
+log_form_full = formula(passornot ~ totalviolations + criticalviolations + seriousviolations + violationseverity + `inspection date`)
+
+log_mod = glm(log_form, data = inspections, family = binomial())
+log_mod_full = glm(log_form_full, data = inspections, family = binomial())
+# AIC the smaller the better
+
+log_mod_step = MASS::stepAIC(log_mod_full, direction = "both", trace = FALSE) #stepwise selection
+
+modelr::rmse(log_mod, data = inspections)
+modelr::rmse(log_mod_step, data = inspections)
+
+summary(log_mod)
+summary(log_mod_step)
+
+table(predicted = ifelse(predict(log_mod, type = "response") > .5, 1, 0), actual = inspections$passornot)
 
 ```
 
+The RMSE of logistic regression model is 4.560278, the RMSE of the model chosen by step function is 4.593883. The AIC of the first logistic regression is 3063.1, and the AIC for the model chosen by step function is 3010.3, it seems that the model selected by AIC is a little bit better. 
 ***
 
 **#9** Using R and beginning with the **inspections** data in **Problem 5**, fit a "best" classification tree to predict whether a restaurant passes its inspection with the following predictors: totalviolations, criticalviolations, seriousviolations, and violationseverity.  
@@ -209,7 +235,19 @@ mean(trainpredz==trainingData_response)
 mean(trainpredz!=trainingData_response) 
 table(trainingData_response)/sum(table(trainingData_response)) #comparing to testing prior proportions
 
+
+# with the satisfactory tree now, let's score it on the testingData
+testpredz <- predict(fittree, testingData, type="class")
+rez <- testpredz-testingData_response #residuals
+sqrt(mean((rez)^2))#rmse
+
 ```
+Describe the results of the method and how good it is at predicting whether a restaurant passes its inspection.
+The misclassification error rate is small. Also, we observe from the table that the classification tree is good at classifying entries into proper buckets. Moreover, the classification rate is 91.67%, which indicates a good successful classification. 
+
+
+Which method works better? The model with the smaller RMSE predicts the pass/filter. The RMSE for classification tree is smaller, thus, it predicts better. 
+
 
 ***
 
