@@ -1,0 +1,341 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Station Quiz - Week 10
+
+Grading Rubric (per question):  
+2 points if complete and correct  
+1 point if incomplete or incorrect  
+0 points if no attempt made  
+
+The following questions should be completed by yourself as an individual today. You are your own station. Thus you are the one who submits (commits/pushes) the answers to the quiz in their repo, i.e., the **designated submitter**. *You have until 11:59 PM Friday March 27, 2020 to complete these questions. Do not change anything in this file above the line.*
+
+***
+
+**#0** Pull this ipynb file from your respective **assignments_section_sp20** repo; either **assignments_section2_sp20** or **assignments_section3_sp20**. Copy it into your personal repo to begin answering the questions, but rename the file as station_quiz_week_10_Netid.R with your Netid. (GitHub)
+
+***
+
+**#1** Using Markdown syntax (not R syntax), make a bulleted list that has your first name in italic font in one bullet and your last name in bold font in another bullet. (Markdown)  
+
+- *Andro*  
+- **Manukov**
+
+
+***
+
+**#2** Using the visualization below, describe what's happening in the plot. (Data Visualization, Markdown)
+
+![](https://static01.nyt.com/images/2020/03/19/learning/ProtectiveMeasuresGraphLN/ProtectiveMeasuresGraphLN-superJumbo-v3.jpg?quality=90&auto=webp)
+
+Here the graph is describing the difference between taking protective measures vs not taking protective measures when a virus breaks out (COVID-19). This plot has a horizontal line showing the healthcare system capacity and showing that if you take protective measures you can stay below that max capacity. The goal here is to stretch out the amount of cases over time so each case can be effectivly treated.  
+
+***
+
+**#3** Import the powerlifting dataset (thanks to David Dalpiaz!) with the link https://uofi.box.com/shared/static/72tsz9guup6p31wc50zjw7y3lkvutqr5.csv. After importing, name the powerlifting data as **lift**. (R, Accessing and Importing Data) 
+```{r}
+library(tidyverse)
+```
+
+```{r }
+lift <- read_csv("https://uofi.box.com/shared/static/72tsz9guup6p31wc50zjw7y3lkvutqr5.csv")
+```
+
+***
+
+**#4** Do the following data wrangling steps:
+  - keep the following variables: Name, Sex, Event, Equipment, Age, AgeClass, BodyweightKg, WeightClassKg, Best3SquatKg, Best3BenchKg, Best3DeadliftKg, TotalKg, Wilks, IPFPoints
+  - filter to keep female powerlifters in AgeClass 24-34 with SBD as the Event 
+  - remove NA values
+  - rename the data object as **power**. (R, Accessing and Importing Data, Data Wrangling)
+
+*There should be 54589 observations in the resulting* **power** *dataset.*
+
+```{r}
+power <- select(lift, Name, Sex, Event, Equipment, Age, AgeClass, BodyweightKg, WeightClassKg, Best3SquatKg, Best3BenchKg, Best3DeadliftKg, TotalKg, Wilks, IPFPoints)
+power <- subset(power, Sex == "F" & AgeClass == "24-34" & Event == "SBD")
+power <- na.omit(power)
+```
+
+***
+
+**#5** Create a new data set called **powerlbs** which is a copy of **power** but has converted the Kg variables of BodyweightKg, Best3SquatKg, Best3BenchKg, Best3DeadliftKg, and TotalKg to pounds (lb). Be sure to replace the "Kg" in the column names to be "Lb". (R, Data Wrangling)
+
+```{r}
+powerlbs <- power
+powerlbs$BodyweightKg <- powerlbs$BodyweightKg * 2.20462
+powerlbs$Best3SquatKg <- powerlbs$Best3SquatKg * 2.20462
+powerlbs$Best3BenchKg <- powerlbs$Best3BenchKg * 2.20462
+powerlbs$Best3DeadliftKg <- powerlbs$Best3DeadliftKg * 2.20462
+powerlbs$TotalKg <- powerlbs$TotalKg * 2.20462
+
+names(powerlbs)[names(powerlbs) == 'BodyweightKg'] <- 'BodyweightLb'
+names(powerlbs)[names(powerlbs) == 'Best3SquatKg'] <- 'Best3SquatLb'
+names(powerlbs)[names(powerlbs) == 'Best3BenchKg'] <- 'Best3BenchLb'
+names(powerlbs)[names(powerlbs) == 'Best3DeadliftKg'] <- 'Best3DeadliftLb'
+names(powerlbs)[names(powerlbs) == 'TotalKg'] <- 'TotalLb'
+
+```
+
+***
+
+**#6** Remove TotalLb due to multicollinearity. In addition, I am claiming that there ~~are 10~~ is 1 outlier in the data from **Problem 5**. Determine the outlier (using the three rules/identifiers in the notes) and remove it from the dataset. (R, Cluster Analysis)
+
+```{r}
+powerlbs <- subset(powerlbs, select = -c(TotalLb))
+```
+
+BodyWeightLb:  
+
+```{r}
+q1<-as.vector(quantile(powerlbs$BodyweightLb,1/4))
+q3<-as.vector(quantile(powerlbs$BodyweightLb,3/4))
+iqr <- as.vector(q3-q1)
+lwr <- which(powerlbs$BodyweightLb < q1-1.5*iqr)
+upr <- which(powerlbs$BodyweightLb > q3+1.5*iqr)
+length(lwr);length(upr)
+```
+
+```{r}
+mn<-mean(powerlbs$BodyweightLb)
+sg<-sd(powerlbs$BodyweightLb)
+tsr <- which(abs(powerlbs$BodyweightLb-mn) > 3*sg)
+length(tsr)
+```
+
+```{r}
+# hampel identifier:
+md<-median(powerlbs$BodyweightLb)
+sg2<-1.4826*(median(abs(powerlbs$BodyweightLb-md)))
+hi <- which(abs(powerlbs$BodyweightLb-md) > 3*sg2)
+length(hi)
+```
+
+Best3SquatLb:  
+
+```{r}
+q1<-as.vector(quantile(powerlbs$Best3SquatLb,1/4))
+q3<-as.vector(quantile(powerlbs$Best3SquatLb,3/4))
+iqr <- as.vector(q3-q1)
+lwr2 <- which(powerlbs$Best3SquatLb < q1-1.5*iqr)
+upr2 <- which(powerlbs$Best3SquatLb > q3+1.5*iqr)
+length(lwr2);length(upr2)
+```
+
+```{r}
+mn<-mean(powerlbs$Best3SquatLb)
+sg<-sd(powerlbs$Best3SquatLb)
+tsr2 <- which(abs(powerlbs$Best3SquatLb-mn) > 3*sg)
+length(tsr2)
+```
+
+```{r}
+# hampel identifier:
+md<-median(powerlbs$Best3SquatLb)
+sg2<-1.4826*(median(abs(powerlbs$Best3SquatLb-md)))
+hi2 <- which(abs(powerlbs$Best3SquatLb-md) > 3*sg2)
+length(hi2)
+```
+
+Best3BenchLbs:  
+
+```{r}
+q1<-as.vector(quantile(powerlbs$Best3BenchLb,1/4))
+q3<-as.vector(quantile(powerlbs$Best3BenchLb,3/4))
+iqr <- as.vector(q3-q1)
+lwr3 <- which(powerlbs$Best3BenchLb < q1-1.5*iqr)
+upr3 <- which(powerlbs$Best3BenchLb > q3+1.5*iqr)
+length(lwr3);length(upr3)
+```
+
+```{r}
+mn<-mean(powerlbs$Best3BenchLb)
+sg<-sd(powerlbs$Best3BenchLb)
+tsr3 <- which(abs(powerlbs$Best3BenchLb-mn) > 3*sg)
+length(tsr3)
+```
+
+```{r}
+# hampel identifier:
+md<-median(powerlbs$Best3BenchLb)
+sg2<-1.4826*(median(abs(powerlbs$Best3BenchLb-md)))
+hi3 <- which(abs(powerlbs$Best3BenchLb-md) > 3*sg2)
+length(hi3)
+```
+
+Best3DeadLiftLb:
+
+```{r}
+q1<-as.vector(quantile(powerlbs$Best3DeadliftLb,1/4))
+q3<-as.vector(quantile(powerlbs$Best3DeadliftLb,3/4))
+iqr <- as.vector(q3-q1)
+lwr4 <- which(powerlbs$Best3DeadliftLb < q1-1.5*iqr)
+upr4 <- which(powerlbs$Best3DeadliftLb > q3+1.5*iqr)
+length(lwr4);length(upr4)
+```
+
+```{r}
+mn<-mean(powerlbs$Best3DeadliftLb)
+sg<-sd(powerlbs$Best3DeadliftLb)
+tsr4 <- which(abs(powerlbs$Best3DeadliftLb-mn) > 3*sg)
+length(tsr4)
+```
+
+```{r}
+# hampel identifier:
+md<-median(powerlbs$Best3DeadliftLb)
+sg2<-1.4826*(median(abs(powerlbs$Best3DeadliftLb-md)))
+hi4 <- which(abs(powerlbs$Best3DeadliftLb-md) > 3*sg2)
+length(hi4)
+```
+Wilks:
+
+```{r}
+q1<-as.vector(quantile(powerlbs$Wilks,1/4))
+q3<-as.vector(quantile(powerlbs$Wilks,3/4))
+iqr <- as.vector(q3-q1)
+lwr5 <- which(powerlbs$Wilks < q1-1.5*iqr)
+upr5 <- which(powerlbs$Wilks > q3+1.5*iqr)
+length(lwr5);length(upr5)
+```
+
+```{r}
+mn<-mean(powerlbs$Wilks)
+sg<-sd(powerlbs$Wilks)
+tsr5 <- which(abs(powerlbs$Wilks-mn) > 3*sg)
+length(tsr5)
+```
+
+```{r}
+# hampel identifier:
+md<-median(powerlbs$Wilks)
+sg2<-1.4826*(median(abs(powerlbs$Wilks-md)))
+hi5 <- which(abs(powerlbs$Wilks-md) > 3*sg2)
+length(hi5)
+```
+
+IPFPoints:
+
+```{r}
+q1<-as.vector(quantile(powerlbs$IPFPoints,1/4))
+q3<-as.vector(quantile(powerlbs$IPFPoints,3/4))
+iqr <- as.vector(q3-q1)
+lwr6 <- which(powerlbs$IPFPoints < q1-1.5*iqr)
+upr6 <- which(powerlbs$IPFPoints > q3+1.5*iqr)
+length(lwr6);length(upr6)
+```
+
+```{r}
+mn<-mean(powerlbs$IPFPoints)
+sg<-sd(powerlbs$IPFPoints)
+tsr6 <- which(abs(powerlbs$IPFPoints-mn) > 3*sg)
+length(tsr6)
+```
+
+```{r}
+# hampel identifier:
+md<-median(powerlbs$IPFPoints)
+sg2<-1.4826*(median(abs(powerlbs$IPFPoints-md)))
+hi6 <- which(abs(powerlbs$IPFPoints-md) > 3*sg2)
+length(hi6)
+```
+
+
+```{r}
+Reduce(intersect, list(tsr,upr,hi,tsr2,upr2,hi2,tsr3,upr3,hi3,tsr4,upr4,hi4,tsr5,upr5,hi5,tsr6,upr6,hi6))
+```
+
+```{r}
+powerlbs <- powerlbs[-Reduce(intersect, list(tsr,upr,hi,tsr2,upr2,hi2,tsr3,upr3,hi3,tsr4,upr4,hi4,tsr5,upr5,hi5,tsr6,upr6,hi6))
+,]
+```
+
+***
+
+**#7** Use the `set.seed` random number generator (where the seed number is 448) to select a random sample size of 100 observations of the resulting dataset (after removing the ~~10~~ 1 outlier~~s~~) in **Problem 6**. Then, standardize the continuous variables of this random subset. (R, Data Descriptives, Cluster Analysis)
+
+```{r}
+set.seed(448)
+ids <- sample(nrow(powerlbs),100)
+sample_powerlbs <- powerlbs[ids,]
+sample_powerlbs <- select(sample_powerlbs, -c("Name", "Sex", "Equipment", "AgeClass", "WeightClassKg", "Event"))
+sample_powerlbs <- scale(sample_powerlbs)
+head(sample_powerlbs)
+```
+
+***
+
+**#8** Use k-means clustering and select 2 clusters. Show the cluster attributes in the form of both 
+
+a) a scatter plot matrix of the 6 continuous variables
+
+b) tables showing the mean and median of these 6 variables.
+
+(R, Cluster Analysis, Data Visualization, Data Descriptives, Markdown)
+
+```{r}
+sample_powerlbs <- as.data.frame(sample_powerlbs)
+sample_powerlbs_noage <- subset(sample_powerlbs, select = -c(Age))
+```
+
+```{r}
+clk <- kmeans(sample_powerlbs_noage, centers = 2)$cluster
+sample_powerlbs_noage <- mutate(sample_powerlbs_noage, clk)
+```
+
+```{r}
+pairs(sample_powerlbs_noage[1:6], 
+      main = "Scatter Plot Matrix",
+      pch = 21, 
+      bg = c("#1b9e77", "#d95f02")[unclass(sample_powerlbs_noage$clk)])
+```
+
+```{r}
+summarise(group_by(sample_powerlbs_noage,clk),clustersize=length(BodyweightLb), avgBodyweightLb= mean(BodyweightLb), medBodyweightLb= median(BodyweightLb), avgBest3SquatLb = mean(Best3SquatLb), medBest3SquatLb = median(Best3SquatLb), avgBest3BenchLb = mean(Best3BenchLb), medBest3BenchLb = median(Best3BenchLb),avgBest3DeadliftLb = mean(Best3DeadliftLb), medBest3DeadliftLb = median(Best3DeadliftLb),avgWilks = mean(Wilks), medWilks = median(Wilks),avgIPFPoints = mean(IPFPoints), medIPFPoints = median(IPFPoints) ) #k-means cluster avg
+
+```
+
+
+***
+
+**#9** Use hierarchical clustering with single linkage and select 2 clusters. Show the cluster attributes in the form of both
+
+a) a scatter plot matrix of the 6 continuous variables
+
+b) tables showing the mean and median of these 6 variables.
+
+(R, Cluster Analysis, Data Visualization, Data Descriptives, Markdown)
+
+```{r}
+pairs(sample_powerlbs_noage[1:6], 
+      main = "Scatter Plot Matrix",
+      pch = 21, 
+      bg = c("#1b9e77", "#d95f02")[(sample_powerlbs_noage$cls)])
+```
+Im not sure why but Knitr is being super weird and not showing the colors of this plot. Its the same code as the one for k-means with cls instead of clk. 
+
+```{r}
+d <- dist(sample_powerlbs_noage, method = "euclidean") # distance matrix
+fits <- hclust(d, method="single")
+cls <- cutree(fits, k=2)
+sample_powerlbs_noage <- mutate(sample_powerlbs_noage, cls)
+```
+
+```{r}
+summarise(group_by(sample_powerlbs_noage,cls),clustersize=length(BodyweightLb), avgBodyweightLb= mean(BodyweightLb), medBodyweightLb= median(BodyweightLb), avgBest3SquatLb = mean(Best3SquatLb), medBest3SquatLb = median(Best3SquatLb), avgBest3BenchLb = mean(Best3BenchLb), medBest3BenchLb = median(Best3BenchLb),avgBest3DeadliftLb = mean(Best3DeadliftLb), medBest3DeadliftLb = median(Best3DeadliftLb),avgWilks = mean(Wilks), medWilks = median(Wilks),avgIPFPoints = mean(IPFPoints), medIPFPoints = median(IPFPoints) ) 
+
+#chaining effect
+
+```
+
+***
+
+**#10** Are the clusters the same for hierarchical clustering and k-means clustering? Describe the cluster attributes in the 2 clusters and any interesting features/attributes among the clusters - for both hierarchical and k-means clustering. (R, Cluster Analysis, Data Visualization, Data Descriptives, Markdown)
+
+No, the clusters are not the same. If you look at the table for the ierarchical clustering with single linkage youll notice most of the clusters fall under the first cluster. I am almost certain this is because the single linkage method suffers from an effect called "chaining" where a chain of points can be extended for long distances without regard to the shape of the cluster. In this case, K-means does a much better job as there are two somewhat distinct clusters between the variables. 
+
+***
+
+**#00** The **designated submitter** should commit and push the file to their repo with the commit message "All Done".
