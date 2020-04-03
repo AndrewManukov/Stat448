@@ -1,0 +1,200 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Station Quiz - Week 11
+
+Grading Rubric (per question):  
+2 points if complete and correct  
+1 point if incomplete or incorrect  
+0 points if no attempt made  
+
+The following questions should be completed by yourself as an individual today. You are your own station. Thus you are the one who submits (commits/pushes) the answers to the quiz in their repo, i.e., the **designated submitter**. *You have until 11:59 PM Friday April 3, 2020 to complete these questions. Do not change anything in this file above the line.*
+
+***
+
+**#0** Pull this ipynb file from your respective **assignments_section_sp20** repo; either **assignments_section2_sp20** or **assignments_section3_sp20**. Copy it into your personal repo to begin answering the questions, but rename the file as station_quiz_week_11_Netid.Rmd with your Netid. (GitHub)
+
+***
+
+**#1** Using Markdown syntax (not R syntax), make a bulleted list that has your first name in italic font in one bullet and your last name in bold font in another bullet. (Markdown)  
+
+- *Andro*  
+- **Manukov**
+
+***
+
+**#2** Using the visualization below, describe what's happening in the plot. (Data Visualization, Markdown)
+
+![](https://static01.nyt.com/images/2020/03/26/learning/CoronavirusTransmissionGraphLN/CoronavirusTransmissionGraphLN-superJumbo.png?quality=90&auto=webp)
+
+In short, this plot displays how big of an effect one person can have on stopping infections. The top plot shows that one person who infects 2 people can lead to a ton of people being infected but the bottom plot shows that if one of the first people infected can take protective measures, it cuts the amount of people infected in half.
+***
+
+**#3** I've created a subset of the CORD-19 dataset with the link https://uofi.box.com/shared/static/0gm00sxp6fka75lwdsont94p8t9jdm6a.csv. After importing, name the data as **cordpapers** and nename the first column as "paper_id" and the second column as "paper_text" (R, Accessing and Importing Data) 
+
+```{r}
+library(tidyverse)
+```
+
+```{r prob3}
+cordpapers <- read_csv("https://uofi.box.com/shared/static/0gm00sxp6fka75lwdsont94p8t9jdm6a.csv")
+```
+```{r}
+names(cordpapers)[names(cordpapers) == 'X1'] <- 'paper_id'
+names(cordpapers)[names(cordpapers) == 'x'] <- 'paper_text'
+```
+
+***
+
+**#4** Check the following statistics on the cordpapers data:
+  - number of characters for each paper
+  - mean number of characters
+  - median number of characters
+  - the largest number of characters and its paper_id
+  - the smallest number of characters and its paper_id. (R, Accessing and Importing Data, Data Wrangling)
+
+```{r prob4}
+nc1 <- str_length(cordpapers$paper_text[1])
+nc2 <- str_length(cordpapers$paper_text[2])
+nc3 <- str_length(cordpapers$paper_text[3])
+nc4 <- str_length(cordpapers$paper_text[4])
+
+nc1
+nc2
+nc3
+nc4
+```
+
+```{r}
+mean(str_length(cordpapers$paper_text))
+```
+
+```{r prob5}
+median(str_length(cordpapers$paper_text))
+```
+
+```{r}
+max(str_length(cordpapers$paper_text))
+cordpapers$paper_id[4]
+```
+
+```{r}
+min(str_length(cordpapers$paper_text))
+cordpapers$paper_id[1]
+```
+***
+
+**#5** Collect the text and place it into a (volatile) corpus called **cordppc** where the new data frame column names are doc_id and text. (R, Data Wrangling, Text Analysis)
+
+```{r}
+library(tm)
+```
+
+```{r}
+df <- data.frame(doc_id = cordpapers$paper_id, text = cordpapers$paper_text, stringsAsFactors = FALSE)
+cordppc <- VCorpus(DataframeSource(df))
+
+```
+
+
+***
+
+**#6** Using the corpus from **#5**, do the following pre-processing steps for the corpus and name the resulting corpus as **cordcorpus**
+
+  - Set all words to lowercase  
+  - Remove stopwords  
+  - Remove punctuation and other symbols  
+  - Remove unnecessary whitespace  
+  - Remove numbers. (R, Data Wrangling, Text Analysis)
+
+```{r prob6}
+#R code from Kwartler's book
+
+# Return NA instead of tolower error
+tryTolower <- function(x){
+# return NA when there is an error
+y = NA
+# tryCatch error
+try_error = tryCatch(tolower(x), error = function(e) e)
+# if not an error
+if (!inherits(try_error, 'error'))
+y = tolower(x)
+return(y)
+}
+
+#custom.stopwords <- c(stopwords("english"), additional useless words)
+
+clean.corpus<-function(corpus){
+corpus <- tm_map(corpus, content_transformer(tryTolower))
+#corpus <- tm_map(corpus, removeWords, custom.stopwords)
+corpus <- tm_map(corpus, removeWords, stopwords('english'))
+corpus <- tm_map(corpus, removePunctuation)
+corpus <- tm_map(corpus, stripWhitespace)
+corpus <- tm_map(corpus, removeNumbers)
+return(corpus)
+}
+
+cordcorpus <- clean.corpus(cordppc)
+#no need to reinvent the wheel
+```
+
+
+***
+
+**#7** Using the **cordcorpus** in **#6**, create a bar plot that shows the 30 most frequent words (unigrams) using the weightTf weighting argument. Be sure to use the visual design principles to make this plot look de-cluttered and red-green colorblind-sensitive. (R, Text Analysis, Data Visualization)
+
+```{r prob7}
+tdm<-TermDocumentMatrix(cordcorpus, control=list(weighting=weightTf))
+tdm.papers <- as.matrix(tdm)
+
+sfq <- data.frame(words=names(sort(rowSums(tdm.papers),decreasing = TRUE)), freqs=sort(rowSums(tdm.papers),decreasing = TRUE), row.names = NULL)
+
+ggplot(sfq[1:30,], mapping = aes(x = reorder(words, freqs), y = freqs)) +
+  geom_bar(stat= "identity", fill=rgb(0/255,191/255,196/255)) +
+  coord_flip() +
+  scale_colour_hue() +
+  labs(x= "Words", title = "30 Most Frequenct Words") +
+  theme(panel.background = element_blank(), axis.ticks.x = element_blank(),axis.ticks.y = element_blank())
+```
+
+***
+
+**#8** Using the **cordcorpus** in **#6**, create a word cloud that shows the 30 most frequent words (unigrams) using the weightTf weighting argument. Be sure to use the visual design principles to make this plot look de-cluttered and red-green colorblind-sensitive.  (R, Text Analysis, Data Visualization)
+
+```{r prob8}
+library(wordcloud)
+wordcloud(sfq$words,sfq$freqs, min.freq = 1, max.words = 30, colors=blues9)
+```
+
+***
+
+**#9** Using the **cordcorpus** in **#6**, create a single dendrogram that shows 3 clusters of important words (less than 50 words controlling for sparsity) using complete linkage. Be sure to use the visual design principles to make this plot look de-cluttered and red-green colorblind-sensitive.  (R, Text Analysis, Data Visualization)
+
+```{r prob9}
+library(dendextend)
+tdm2 <- removeSparseTerms(tdm, sparse=0.05) #the lower the sparse parameter, the fewer words are selected
+#dim(tdm2)
+hc <- hclust(dist(tdm2, method="euclidean"), method="complete")
+#plot(hc)
+hcd <- as.dendrogram(hc)
+clusMember <- cutree(hc,3) #choosing 4 clusters
+hcd<-color_labels(hcd,3, col = c( rgb(0/255,191/255,196/255),rgb(19/255,41/255,75/255), rgb(255/255,74/255,39/255)))
+hcd<-color_branches(hcd,3, col = c( rgb(0/255,191/255,196/255),rgb(19/255,41/255,75/255), rgb(255/255,74/255,39/255)))
+
+plot(hcd, main = "Single Dendrogram", type = "triangle",yaxt='n')
+```
+
+
+***
+
+**#10** Provide an interpretation for each of the data visualizations in problems **#7, #8, and #9**. What kind of meaning can we gain from these visualizations? Any interesting occur in these visualizations? (R, Text Analysis, Markdown)
+
+Bar Plot: Very simple to follow and shows us exactly what we need
+Word Cloud: Much more appealing and still gets the point across. Can be harder to analyze sometimes.
+Dendrogram: Focuses on the visual aspect, allows to see patterns/clusters between similar words (idk tbh)
+
+***
+
+**#00** The **designated submitter** should commit and push the file to their repo with the commit message "All Done".
