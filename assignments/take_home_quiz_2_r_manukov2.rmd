@@ -1,0 +1,391 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+```
+
+## Take-Home Quiz - R
+
+Grading Rubric (per question):  
+2 points if complete and correct  
+1 point if incomplete or incorrect  
+0 points if no attempt made  
+
+The following questions should be completed by yourself as an individual today. You are your own station. Thus you are the one who submits (commits/pushes) the answers to the quiz in their repo, i.e., the **designated submitter**. *You have until 11:59 PM Monday April 13, 2020 to complete these questions. Do not change anything in this file above the line.*
+
+
+***
+
+**#0** Pull this Rmd file from your respective **assignments_section_sp20** repo; either **assignments_section2_sp20** or **assignments_section3_sp20**. Copy it into your personal repo to begin answering the questions, but rename the file as station_quiz_week_11_Netid.Rmd with your Netid. (GitHub)
+
+
+***
+
+**#1** Using Markdown syntax (not R syntax), make a bulleted list that has your first name in bold font in one bullet and your last name in italic font in another bullet. (Markdown) 
+
+- *Note: Had a busy week and didn't really get around to this, feel free not to grade*
+- *Andro*  
+- **Manukov**
+
+***
+
+
+**#2** Using the visualization below, describe what's happening in the plot in paragraph form. (Data Visualization, Markdown)
+![](https://uofi.box.com/shared/static/11cg4zu9kgjng4k0wqxfo5hj49hw4645.png) 
+
+At the literal level this plot is showing the percent change in average travel for the week of March 23rd but I think the point of this plot is to show the effectiveness of the stay-at-home orders. The northeast and midwest regions have been obeying the stay-at-home orders while the South/West seem to obey them less. This might be due to when the orders were placed. 
+
+
+***
+
+
+**#3** Import the SBA Loans Data https://uofi.box.com/shared/static/vi37omgitiaa2yyplrom779qvwk1g14x.csv and rename the data object as **sba**. (R, Accessing and Importing Data, Data Wrangling)
+
+
+```{r prob3}
+sba <- read_csv("https://uofi.box.com/shared/static/vi37omgitiaa2yyplrom779qvwk1g14x.csv", 
+                col_types = cols(DisbursementGross = col_number(), CreateJob = col_number(), Zip = col_character(), SBA_Appv = col_number(), GrAppv = col_number()))
+```
+
+
+***
+
+
+**#4** Using the SBA Loans data, create a new dataset called **sba51** with the information aggregated over the 50 states and District of Columbia (in alphabetical order) such that the businesses are only those with paid in full status (do not aggregate NAs). The columns in this new dataset should represented in the following ways:
+
+  - State is identity of state (abbreviation)
+  - AvgTerm is average Term
+  - TotNoEmp is total number of employees
+  - TotBiz is total number of businesses
+  - TotUrban is total number of urban businesses
+  - TotRural is total number of rural businesses
+  - TotDisGross is total amount disbursed in dollars
+  - TotGrAppv is total gross amount of loan approved by the bank in dollars
+  - TotSbAppv is total SBA guaranteed amount of approved loan in dollars
+
+*In other words, there should be 51 observations in "sba51" and 9 columns beginning with AK* (R, Accessing and Importing Data, Data Wrangling)
+
+
+```{r}
+sba$TotBiz = 1
+head(sba)
+```
+
+```{r}
+sba51 <- na.omit(sba) #getting rid of NA.
+sba51$TotUrban = ifelse(sba51$UrbanRural == 1, 1, 0) 
+sba51$TotRural = ifelse(sba51$UrbanRural == 2, 1, 0) 
+
+#splitting urban and rural.
+```
+
+
+```{r prob4}
+sba51 <- summarise_at(group_by(sba51, State), vars(Term, NoEmp, TotBiz, TotUrban, TotRural, DisbursementGross, GrAppv, SBA_Appv), funs(sum(.,na.rm=FALSE)))
+#urban = 1
+```
+
+```{r}
+#rename all vars. and find average term.
+sba51$AvgTerm <- sba51$Term / sba51$TotBiz
+names(sba51)[names(sba51) == 'DisbursementGross'] <- 'TotDisGross'
+names(sba51)[names(sba51) == 'GrAppv'] <- 'TotGrAppv'
+names(sba51)[names(sba51) == 'SBA_Appv'] <- 'TotSbAppv'
+names(sba51)[names(sba51) == 'NoEmp'] <- 'TotNoEmp'
+
+```
+```{r}
+sba51 <- subset(sba51, select = -c(Term))
+head(sba51)
+```
+
+
+***
+
+
+**#5** Import the New York Times COVID-19 US-States Data https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv and only keep the 50 states and District of Columbia for the date April 4, 2020 among all columns except fips. Rename this dataset as **covid51**. *There should be only 51 observations and 4 columns.*
+
+```{r prob5}
+covid51 <- read_csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv")
+```
+```{r}
+covid51 <- subset(covid51, date == "2020-04-04")
+covid51 <- subset(covid51, state != "Virgin Islands" | state != "Puerto Rico" | state != "Guam")
+covid51 <- subset(covid51, state != "Northern Mariana Islands") #no idea why it wont let me do this entry with the subset statement above.
+```
+
+```{r}
+covid51 <- subset(covid51, select = -c(fips))
+```
+```{r}
+names(covid51)[names(covid51) == 'state'] <- 'State'
+covid51
+```
+
+
+***
+
+
+**#6** Import the US Census State Population Estimate Data for 2019 https://www2.census.gov/programs-surveys/popest/datasets/2010-2019/state/detail/SCPRC-EST2019-18+POP-RES.csv and only keep the 50 states and District of Columbia among the following columns: NAME, POPESTIMATE2019, and POPEST18PLUS2019. Rename this dataset as **statepop51**. *There should be only 51 observations and 3 columns.*
+
+```{r prob6}
+statepop51 <- read_csv("https://www2.census.gov/programs-surveys/popest/datasets/2010-2019/state/detail/SCPRC-EST2019-18+POP-RES.csv")
+```
+```{r}
+statepop51 <- subset(statepop51, select = c(NAME, POPESTIMATE2019, POPEST18PLUS2019))
+statepop51 <- subset(statepop51, NAME != "United States")
+statepop51 <- subset(statepop51, NAME != "Puerto Rico Commonwealth")
+
+```
+
+```{r}
+names(statepop51)[names(statepop51) == 'NAME'] <- 'State'
+statepop51
+```
+
+
+
+***
+
+
+**#7** Although the time periods are different, we want to merge the three datasets (**sba51**, **covid51**, and **statepop51**) by matching their state information. Merge them and name the merged dataset **sbacovid**. (R, Accessing and Importing Data, Data Wrangling)
+
+```{r prob7}
+temp <- merge(covid51, statepop51, by = "State")
+```
+
+```{r}
+stateabs <- read_csv("https://worldpopulationreview.com/static/states/abbr-name.csv", col_names = FALSE)
+```
+```{r}
+names(stateabs)[names(stateabs) == 'X1'] <- 'Abbr'
+names(stateabs)[names(stateabs) == 'X2'] <- 'State'
+```
+
+
+```{r}
+temp <- merge(temp, stateabs)
+names(temp)[names(temp) == 'State'] <- 'Full Name'
+names(temp)[names(temp) == 'Abbr'] <- 'State'
+```
+
+```{r}
+sbacovid <- merge(temp, sba51, by = "State")
+sbacovid
+```
+
+
+***
+
+
+**#8** Using 5 clusters with hierarchical clustering and average linkage, cluster the **sba51**, **covid51**, and **sbacovid** datasets separately. Show the scatter plot matrix for each dataset's clustering. (R, Cluster Analysis, Data Visualization, Data Descriptives, Markdown)
+
+```{r prob8}
+d <- dist(sba51, method = "euclidean") # distance matrix
+fits <- hclust(d, method="average")
+cls <- cutree(fits, k=5)
+sba51 <- mutate(sba51, cls)
+```
+
+```{r}
+pairs(sba51[2:8], 
+      main = "Scatter Plot Matrix",
+      pch = 21, 
+      bg = c("#1b9e77", "#d95f02", "red", "blue", "green")[(sba51$cls)])
+```
+
+
+
+```{r}
+d <- dist(covid51, method = "euclidean") # distance matrix
+fits <- hclust(d, method="average")
+cls <- cutree(fits, k=5)
+covid51 <- mutate(covid51, cls)
+```
+
+```{r}
+pairs(covid51[3:4], 
+      main = "Scatter Plot Matrix",
+      pch = 21, 
+      bg = c("#1b9e77", "#d95f02", "red", "blue", "green")[(covid51$cls)])
+```
+
+```{r}
+d <- dist(sbacovid, method = "euclidean") # distance matrix
+fits <- hclust(d, method="average")
+cls <- cutree(fits, k=5)
+sbacovid <- mutate(sbacovid, cls)
+```
+```{r}
+pairs(sbacovid[4:15], 
+      main = "Scatter Plot Matrix",
+      pch = 21, 
+      bg = c("#1b9e77", "#d95f02", "red", "blue", "green")[(sbacovid$cls)])
+```
+
+
+***
+
+
+**#9** Based on the clusters from **#8**, describe the cluster attributes and any interesting features among the clusters - for the three datasets. (R, Cluster Analysis, Data Descriptives, Markdown)
+
+SBA51: Theres 5 distinct clusters. Most variables have a linear relationship. 
+COVID51: 
+SBACOVID: 
+
+***
+
+
+**#10** Using R and beginning with the **sbacovid** data in **Problem 7**, create a data visualization that displays at least 1 variable from each of the 3 datasets. Make sure your data visualization follows visual design principles (in the Week 3 notes) and answers Yes to the question "Is this visualization self-explanatory?" (R, Data Visualization, Visual Design Principles)
+
+```{r}
+sbacovid
+```
+
+```{r prob10}
+#cases, population, urban business
+```
+
+
+***
+
+
+**#11** Using R and beginning with the **sbacovid** data in **Problem 7**, determine if there are any outliers in the data. Give evidence as to which points are outliers and why they are outliers. If there are no outliers, give your reasoning for why there are no outliers in the data. (R, Data Descriptives, Data Visualization)
+
+```{r}
+sbacovid
+```
+
+cases:
+```{r prob11}
+q1<-as.vector(quantile(powerlbs$BodyweightLb,1/4))
+q3<-as.vector(quantile(powerlbs$BodyweightLb,3/4))
+iqr <- as.vector(q3-q1)
+lwr <- which(powerlbs$BodyweightLb < q1-1.5*iqr)
+upr <- which(powerlbs$BodyweightLb > q3+1.5*iqr)
+length(lwr);length(upr)
+```
+deaths:
+
+POP2019:
+
+POP18:
+
+TotNoEmp:
+
+TotBiz:
+
+TotUrban:
+
+TotRural:
+
+TotDisGross:
+
+TotGrAppv:
+
+TotSbAppv:
+
+AvgTerm:
+
+This is gonna take way too long lol
+***
+
+
+**#12** Using **sbacovid**, create a new variable called "caserate" which equals the number of cases of covid-19 divided by the state population. Now, use linear regression to predict a state's caserate. Compare at least two models. This problem requires automatic or criterion selection procedures and checking for multicollinearity. (R, GLM - Linear Regression, Data Visualization, Markdown)
+
+
+```{r prob12}
+sbacovid$caserate = sbacovid$cases / sbacovid$POPESTIMATE2019
+```
+
+```{r}
+lm_model1 <- lm(caserate ~ TotUrban + TotRural + TotDisGross, data=sbacovid)
+lm_model2 <- lm(caserate ~ TotUrban + TotGrAppv + AvgTerm , data=sbacovid)
+```
+
+```{r}
+summary(lm_model1)
+```
+```{r}
+summary(lm_model2)
+```
+
+***
+
+
+**#13** Interpret the better or chosen model in **#12**. This interpretation should include a discussion of the parameter estimates in terms of the change in units. (R, GLM - Linear Regression, Markdown)
+
+Model 2 is slightly better as it's R^2 is higher. It's interesting to see that TotUrban is a significant predictor.
+
+
+
+***
+
+
+**#14** Using **sbacovid**, consider a logistic regression response variable that is a comparison of the integer number of cases (people with covid-19) to the number of non-cases (people without covid-19). Think of this new response as representing the "caseness" of covid-19 for each state. Now, use logistic regression to predict a state's casesness. Compare at least two models and interpret the better or chosen model. This problem requires automatic or criterion selection procedures and checking for multicollinearity. (R, GLM - Logistic Regression, Markdown)
+
+```{r prob14}
+
+```
+
+
+***
+
+
+**#15** Interpret the better or chosen model in **#14**. This interpretation should include a discussion of the parameter estimates in terms of the odds of being a case (not log odds). (R, GLM - Logistic Regression, Markdown)
+
+```{r prob15}
+```
+
+
+***
+
+
+**#16** Import my early version of the CORD-19 text-based dataset with the link https://uofi.box.com/shared/static/uauynsuqidjj114ywfwkdaj094768iuh.csv such that the first column is called "paper_id" and the second column is called "paper_text". Use R to randomly select 50 papers and only keep those 50 papers as your total number of observations. Now, do all necessary steps to create a corpus that has been processed such that later unigrams analysis can be done on it. Name this cleaned and processed corpus **cordcorpus**. (R, Accessing and Importing Data, Data Wrangling, Text Analysis)
+
+```{r prob16}
+cordcorpus <- read_csv("https://uofi.box.com/shared/static/uauynsuqidjj114ywfwkdaj094768iuh.csv")
+```
+
+
+
+***
+
+**#17** Using the **cordcorpus** in **#16**, create a bar plot that shows the 30 most frequent words (unigrams) using the weightTf weighting argument. Be sure to use the visual design principles to make this plot look de-cluttered and red-green colorblind-sensitive. (R, Text Analysis, Data Visualization)
+
+```{r prob17}
+```
+
+
+***
+
+**#18** Using the **cordcorpus** in **#16**, create a word cloud that shows the 30 most frequent words (unigrams) using the weightTf weighting argument. Be sure to use the visual design principles to make this plot look de-cluttered and red-green colorblind-sensitive.  (R, Text Analysis, Data Visualization)
+
+```{r prob18}
+```
+
+
+***
+
+**#19** Using the **cordcorpus** in **#16**, create a single dendrogram that shows 3 clusters of important words (less than 50 words controlling for sparsity) using average linkage. Be sure to use the visual design principles to make this plot look de-cluttered and red-green colorblind-sensitive. (R, Text Analysis, Data Visualization)
+
+```{r prob19}
+```
+
+
+***
+
+
+**#20** Provide an interpretation for each of the data visualizations in problems **#17, #18, and #19**. What kind of meaning can we gain from these visualizations? Anything interesting occur in these visualizations? (R, Text Analysis, Markdown)
+
+
+```{r prob20}
+```
+
+
+***
+
+
+**#00** The **designated submitter** should commit and push the file to their repo with the commit message "All Done".
